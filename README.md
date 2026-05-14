@@ -1,112 +1,78 @@
 # π archive
 
-> A curated resource wiki with an Arch Wiki-inspired dark interface.
-
-π archive is a static website for organizing and browsing curated resources, tools, and guides. It features a wiki-style layout with a sticky table-of-contents sidebar, hierarchical categories with sub-categories, and individual Markdown-based guides rendered client-side.
+A curated resource wiki with an Arch Wiki-inspired dark interface.
 
 ## Features
 
-- **Arch Wiki Theming** — Dark interface inspired by ArchWiki with Linux Libertine headings and monospace accents
-- **Hierarchical Categories** — Categories with nested sub-categories (e.g. Streaming → Movie / Anime)
-- **Wiki-style TOC Sidebar** — Sticky numbered navigation with section/sub-section entries
-- **Markdown Guides** — Write guides as individual `.md` files, rendered with [marked.js](https://github.com/markedjs/marked)
-- **Collapsible Sections** — `[hide]`/`[show]` toggles on the overview page
-- **Responsive Design** — Works on desktop, tablet, and mobile
-- **Data-Driven** — Add resources and guides without touching HTML or JS
+- **Dark Wiki UI** — Linux Libertine headings, monospace accents, sticky TOC sidebar
+- **Live Search** — Instant filtering across all resources; `Ctrl K` to focus
+- **Hierarchical Categories** — Nested sub-categories with collapsible sections
+- **Markdown Guides** — Individual `.md` files rendered client-side via [marked.js](https://github.com/markedjs/marked)
+- **Data-Driven** — Add resources and guides without modifying HTML or JS
 
-## Project Structure
+## Structure
 
 ```
-├── index.html            # Main page layout (header, TOC sidebar, content area)
-├── styles.css            # Arch Wiki dark theme and Markdown body styles
-├── script.js             # Data loading, TOC rendering, Markdown fetching
-├── links.json            # Resource categories, sub-categories, and links
-├── posts/
-│   ├── index.json        # Guide metadata (title, date, tags, file path)
-│   ├── wslu.md           # Guide: Windows Local Password Recovery
-│   ├── ms-activation.md  # Guide: Microsoft Activation Scripts
-│   └── idm.md            # Guide: IDM Activation
-└── README.md             # This file
+├── index.html          # Shell: header, sidebar, content area
+├── styles.css          # Theme and component styles
+├── script.js           # Data loading, routing, search, Markdown rendering
+├── links.json          # Resource categories and links
+└── posts/
+    ├── index.json      # Guide manifest (title, date, tags, file path)
+    └── *.md            # Individual guide files
 ```
 
-## Adding Content
+## Adding a Resource
 
-### Add a Resource Link
-
-Edit `links.json`. For a flat category (no sub-categories):
+Edit `links.json`. Flat category:
 
 ```json
 {
   "id": "tools",
   "category": "Tools",
   "icon": "🧰",
-  "description": "Useful utilities and developer tools.",
+  "description": "Useful utilities.",
   "links": [
-    {
-      "name": "GitHub",
-      "url": "https://github.com",
-      "tags": ["dev", "git"],
-      "description": "Code hosting and version control platform."
-    }
+    { "name": "GitHub", "url": "https://github.com", "tags": ["dev"], "description": "Code hosting." }
   ]
 }
 ```
 
-For a category with sub-categories:
+Category with sub-categories:
 
 ```json
 {
   "id": "streaming",
   "category": "Streaming",
   "icon": "📺",
-  "description": "Free streaming sources.",
   "subcategories": [
-    {
-      "id": "movies",
-      "label": "Movie",
-      "icon": "🎬",
-      "links": [ ... ]
-    },
-    {
-      "id": "anime",
-      "label": "Anime",
-      "icon": "⛩️",
-      "links": [ ... ]
-    }
+    { "id": "movies", "label": "Movies & TV", "icon": "🎬", "links": [ ... ] },
+    { "id": "anime",  "label": "Anime",        "icon": "⛩️", "links": [ ... ] }
   ]
 }
 ```
 
-### Add a Guide
+## Adding a Guide
 
-1. Create a new `.md` file in `posts/` (e.g. `posts/my-guide.md`)
+1. Create `posts/<slug>.md`
 2. Add an entry to `posts/index.json`:
 
 ```json
 {
   "file": "posts/my-guide.md",
-  "title": "My New Guide",
+  "title": "My Guide",
   "date": "2026-05-15",
   "cat": "general",
   "catLabel": "General",
   "tags": ["tutorial"],
-  "desc": "A short description shown in the guide header."
+  "desc": "Short description shown in the guide header."
 }
 ```
 
-That's it — the guide will appear in the TOC sidebar automatically.
-
 ## Customization
 
-Edit the `:root` CSS variables in `styles.css` to change colors, fonts, and layout widths.
-
-## Browser Support
-
-- Chrome / Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers
+Edit `:root` CSS variables in `styles.css` to adjust colors, fonts, and layout widths.
 
 ## License
 
-Free to use and modify.
+[MIT](LICENSE.md) © [trionine](https://trionine.xyz)

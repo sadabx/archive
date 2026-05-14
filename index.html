@@ -1,71 +1,99 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A curated archive of software, games, streaming and domain resources — organized like a wiki."
-    />
-    <meta name="theme-color" content="#1a1a1a" />
-    <meta property="og:title" content="π archive – Resource Wiki" />
-    <meta
-      property="og:description"
-      content="Curated software, games, streaming and domain resources."
-    />
-    <meta property="og:type" content="website" />
-    <title>archive – Resource Wiki</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%23FFFFFF'>π</text></svg>"
-    />
-  </head>
-  <body>
-    <header class="site-header" role="banner">
-      <div class="header-content">
-        <div class="logo">
-          <h1 aria-label="pi archive">
-            <span class="logo-pi">π</span>&nbsp;archive
-          </h1>
-        </div>
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="#" id="nav-home">Home</a>
-          <a href="#" id="nav-resources">Resources</a>
-          <a href="#" id="nav-guides">Guides</a>
-        </nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A curated archive of useful resources for general purposes." />
+  <meta name="theme-color" content="#1a1a1a" />
+  <meta property="og:title" content="π archive – Resource Wiki" />
+  <meta property="og:description" content="Curated websites and resources for general purposes." />
+  <meta property="og:type" content="website" />
+  <title>archive - Resource Wiki</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%23FFFFFF'>π</text></svg>" />
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-content">
+      <div class="logo">
+        <h1 aria-label="pi archive">
+          <span class="logo-pi">π</span>&nbsp;archive
+        </h1>
       </div>
-    </header>
 
-    <div class="page-layout">
-      <!-- Left Sidebar: TOC-style navigation -->
-      <aside class="left-sidebar" aria-label="Table of contents">
-        <nav class="toc-box">
-          <div class="toc-title"><span class="toc-icon">☰</span> Contents</div>
-          <div class="toc-nav" id="toc-nav">
-            <p class="loading" style="padding: 12px 14px">Loading…</p>
-          </div>
-        </nav>
-      </aside>
+      <!-- Mobile hamburger -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-      <!-- Main Wiki Content -->
-      <main class="main-content" id="main-content">
-        <p class="loading">Loading content…</p>
-      </main>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="#" id="nav-home">Home</a>
+        <a href="#" id="nav-resources">Resources</a>
+        <a href="#" id="nav-guides">Guides</a>
+      </nav>
+
+      <div class="header-search" role="search">
+        <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input type="search" id="site-search" class="search-input" placeholder="Search…" autocomplete="off"
+          spellcheck="false" aria-label="Search resources" />
+        <kbd class="search-kbd">/</kbd>
+      </div>
     </div>
+  </header>
 
-    <footer class="site-footer" role="contentinfo">
-      <div class="footer-inner">
-        <p class="footer-note">
-          π archive is a personal curated collection of resources and guides for
-          general use. External links are not endorsed — use at your own
-          discretion.
-        </p>
-        <span class="footer-copy">© <span id="year">2024</span> π archive</span>
+  <div class="page-layout">
+    <!-- Left Sidebar: TOC-style navigation -->
+    <aside class="left-sidebar" aria-label="Table of contents">
+      <nav class="toc-box">
+        <button class="toc-title" id="toc-toggle" aria-expanded="true" aria-controls="toc-nav">
+          <span class="toc-icon">☰</span> Contents
+          <span class="toc-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="toc-nav" id="toc-nav">
+          <p class="loading" style="padding: 12px 14px">Loading…</p>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Wiki Content -->
+    <main class="main-content" id="main-content">
+      <p class="loading">Loading content…</p>
+    </main>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo"><span class="logo-pi">π</span> archive</span>
+        <p class="footer-tagline">A curated index of resources,<br>organized like a wiki.</p>
+        <p class="footer-dev">Developed by <a href="https://trionine.xyz" target="_blank" rel="noopener noreferrer">trionine</a></p>
       </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+      <div class="footer-links">
+        <p class="footer-col-label">Quick Links</p>
+        <a href="#" id="footer-home">Home</a>
+        <a href="#" id="footer-resources">Resources</a>
+        <a href="#" id="footer-guides">Guides</a>
+        <a href="https://github.com/sadabx/archive" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+
+      <div class="footer-meta">
+        <p class="footer-col-label">Disclaimer</p>
+        <p class="footer-note">External links are not endorsed.<br>Use at your own discretion.</p>
+        <span class="footer-copy">© <span id="year">2026</span> π archive</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

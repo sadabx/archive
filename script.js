@@ -22,17 +22,100 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('year').textContent = new Date().getFullYear();
     configureMd();
 
+    // Nav links
     document.getElementById('nav-home').addEventListener('click', e => {
         e.preventDefault();
         setView('all', null, null);
+        setActiveNav('nav-home');
+        closeNav();
     });
     document.getElementById('nav-resources').addEventListener('click', e => {
         e.preventDefault();
         setView('all', null, null);
+        setActiveNav('nav-resources');
+        closeNav();
     });
     document.getElementById('nav-guides').addEventListener('click', e => {
         e.preventDefault();
-        if (state.posts.length) setView('guide', 'guide-0', null);
+        if (state.posts.length) { setView('guide', 'guide-0', null); setActiveNav('nav-guides'); }
+        closeNav();
+    });
+
+    // Footer quick links
+    document.getElementById('footer-home').addEventListener('click', e => {
+        e.preventDefault(); setView('all', null, null); setActiveNav('nav-home'); window.scrollTo({top:0,behavior:'smooth'});
+    });
+    document.getElementById('footer-resources').addEventListener('click', e => {
+        e.preventDefault(); setView('all', null, null); setActiveNav('nav-resources'); window.scrollTo({top:0,behavior:'smooth'});
+    });
+    document.getElementById('footer-guides').addEventListener('click', e => {
+        e.preventDefault();
+        if (state.posts.length) { setView('guide', 'guide-0', null); setActiveNav('nav-guides'); }
+        window.scrollTo({top:0,behavior:'smooth'});
+    });
+
+    // Hamburger toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const mainNav = document.getElementById('main-nav');
+    navToggle.addEventListener('click', () => {
+        const open = mainNav.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', open);
+    });
+
+    // Mobile search: tap the icon to expand the search box
+    const headerSearch = document.querySelector('.header-search');
+    const searchInput = document.getElementById('site-search');
+    headerSearch.addEventListener('click', e => {
+        if (window.innerWidth <= 640 && !headerSearch.classList.contains('search-open')) {
+            e.preventDefault();
+            headerSearch.classList.add('search-open');
+            searchInput.focus();
+        }
+    });
+
+    // Close expanded mobile search on blur
+    searchInput.addEventListener('blur', () => {
+        if (window.innerWidth <= 640 && !searchInput.value) {
+            headerSearch.classList.remove('search-open');
+        }
+    });
+
+    // TOC collapse toggle (tablet/mobile)
+    const tocToggle = document.getElementById('toc-toggle');
+    const tocNav = document.getElementById('toc-nav');
+    tocToggle.addEventListener('click', () => {
+        if (window.innerWidth > 900) return; // desktop: always open
+        const collapsed = tocNav.classList.toggle('toc-collapsed');
+        tocToggle.setAttribute('aria-expanded', !collapsed);
+    });
+
+    // '/' key to focus search (doesn't hijack browser shortcuts)
+    document.addEventListener('keydown', e => {
+        const tag = document.activeElement.tagName;
+        if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') {
+            e.preventDefault();
+            if (window.innerWidth <= 640) {
+                headerSearch.classList.add('search-open');
+            }
+            searchInput.focus();
+        }
+    });
+
+    // Live search
+    let searchTimer;
+    searchInput.addEventListener('input', e => {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(() => applySearch(e.target.value.trim()), 120);
+    });
+
+    // Clear search on Escape
+    searchInput.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            e.target.value = '';
+            applySearch('');
+            e.target.blur();
+            if (window.innerWidth <= 640) headerSearch.classList.remove('search-open');
+        }
     });
 
     Promise.all([
@@ -44,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             state.posts = posts;
             renderTOC();
             renderMain();
+            setActiveNav('nav-home');
         })
         .catch(err => {
             document.getElementById('main-content').innerHTML =
@@ -51,11 +135,106 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 
+/* ── Close mobile nav helper ── */
+function closeNav() {
+    const nav = document.getElementById('main-nav');
+    const toggle = document.getElementById('nav-toggle');
+    nav.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+}
+
+/* ── Active nav highlight ── */
+function setActiveNav(id) {
+    document.querySelectorAll('.main-nav a').forEach(a => a.classList.remove('nav-active'));
+    const el = document.getElementById(id);
+    if (el) el.classList.add('nav-active');
+}
+
+/* ── Search ── */
+function applySearch(query) {
+    if (!query) {
+        renderMain(); // restore the current view
+        return;
+    }
+
+    const q = query.toLowerCase();
+    const results = [];
+
+    state.links.forEach(cat => {
+        const links = cat.links
+            ? cat.links
+            : (cat.subcategories || []).flatMap(s => s.links);
+        links.forEach(link => {
+            const haystack = [
+                link.name,
+                link.description || '',
+                ...(link.tags || []),
+            ].join(' ').toLowerCase();
+            if (haystack.includes(q)) {
+                results.push({ link, cat });
+            }
+        });
+    });
+
+    renderSearchResults(query, results);
+}
+
+function renderSearchResults(query, results) {
+    const main = document.getElementById('main-content');
+
+    if (!results.length) {
+        main.innerHTML = `
+        <div class="wiki-page-header">
+            <h2 class="wiki-page-title">Search results</h2>
+            <p class="wiki-page-subtitle">Query: <em>${escapeHtml(query)}</em></p>
+        </div>
+        <div class="search-empty">
+            No resources matched <strong>${escapeHtml(query)}</strong>.
+        </div>`;
+        return;
+    }
+
+    const rows = results.map(({ link, cat }) => {
+        const favicon = getFavicon(link.url);
+        const fallback = getFallback(link.name, link.url);
+        const tags = (link.tags || []).map(t => `<span class="tag-pill">${t}</span>`).join('');
+        return `<tr>
+            <td class="col-icon">
+                <img class="site-favicon" src="${favicon}" alt="" loading="lazy"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';">
+                <span class="site-favicon-fallback" style="display:none">${fallback}</span>
+            </td>
+            <td class="col-name">
+                <a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.name}</a>
+                <div style="font-size:0.72rem;color:var(--text-dim);margin-top:2px;">${cat.icon} ${cat.category}</div>
+            </td>
+            <td class="col-desc">${link.description || ''} ${tags}</td>
+        </tr>`;
+    }).join('');
+
+    main.innerHTML = `
+    <div class="wiki-page-header">
+        <h2 class="wiki-page-title">Search results</h2>
+        <p class="wiki-page-subtitle">${results.length} resource${results.length !== 1 ? 's' : ''} matched “${escapeHtml(query)}”</p>
+    </div>
+    <table class="link-table">
+        <thead><tr>
+            <th class="col-icon"></th>
+            <th class="col-name">Site</th>
+            <th class="col-desc">Description</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+    </table>`;
+}
+
 /* ── View state ── */
 function setView(view, activeId, activeSubId) {
     state.view = view;
     state.activeId = activeId;
     state.activeSubId = activeSubId;
+    // Clear search when navigating
+    const searchEl = document.getElementById('site-search');
+    if (searchEl) searchEl.value = '';
     renderTOC();
     renderMain();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -237,7 +416,7 @@ function renderAllPage() {
     let html = `
     <div class="wiki-page-header">
         <h2 class="wiki-page-title">π archive</h2>
-        <p class="wiki-page-subtitle">Curated software, games, streaming and domain resources — organized like a wiki.</p>
+        <p class="wiki-page-subtitle">Curated archive of useful resources and guides for general purposes.</p>
     </div>
     <div class="stats-bar">
         <div class="stat-item"><span class="stat-val">${state.links.length}</span><span class="stat-label">categories</span></div>

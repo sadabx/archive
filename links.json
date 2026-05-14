@@ -1,121 +1,211 @@
 [
   {
+    "id": "ebooks",
+    "category": "Ebooks",
+    "icon": "",
+    "description": "Free and cracked ebooks, audiobooks and educational materials.",
+    "links": [
+      {
+        "name": "ZLibrary",
+        "url": "https://1lib.sk/",
+        "tags": ["ebooks", "library", "research"],
+        "description": "Vast multilingual ebook collection with books, papers, academic materials, comics, and metadata searchable by ISBN."
+      },
+      {
+        "name": "Anna's Archive",
+        "url": "https://annas-archive.gl/",
+        "tags": ["ebooks", "library", "academic"],
+        "description": "Large open-source library of books, papers, and academic materials with torrent seeding and SciDB academic papers access."
+      },
+      {
+        "name": "Ocean of PDF",
+        "url": "https://oceanofpdf.com/",
+        "tags": ["ebooks", "pdf", "archive"],
+        "description": "Free ebook library established in 2018 with PDF format books and content search across genres and languages."
+      }
+    ]
+  },
+  {
+    "id": "Library",
+    "category": "Library",
+    "icon": "",
+    "description": "Free access to online libraries, archives and research materials.",
+    "subcategories": [
+      {
+        "id": "Manga",
+        "label": "Manga",
+        "icon": "",
+        "links": [
+          {
+            "name": "Comix",
+            "url": "https://comix.to/",
+            "tags": ["manga", "webtoon", "reader"],
+            "description": "Manga and webtoon reader with 100,000+ titles, user lists, MAL/AL import, and freshly rewritten database."
+          },
+          {
+            "name": "WeebCentral",
+            "url": "https://weebcentral.com/",
+            "tags": ["manga", "updates", "reader"],
+            "description": "Fast-loading manga and webtoon platform with extensive collection and rapid chapter updates."
+          },
+          {
+            "name": "Mangafire",
+            "url": "https://mangafire.to/",
+            "tags": ["manga", "ad-free", "sync"],
+            "description": "Free manga reader with 30,000+ titles, zero pop-up ads, dark/light themes, and cross-device sync."
+          }
+        ]
+      },
+      {
+        "id": "novel",
+        "label": "Novel",
+        "icon": "",
+        "links": [
+          {
+            "name": "Novelfire",
+            "url": "https://novelfire.net/",
+            "tags": ["light-novels", "web-novels", "translations"],
+            "description": "Free light novel and web novel translations across all genres with unlimited reading and fast updates."
+          },
+          {
+            "name": "LightNovelWorld",
+            "url": "https://lightnovelworld.org/",
+            "tags": ["light-novels", "rankings", "chapters"],
+            "description": "Web novel platform with 7000+ series, user ratings, monthly view counts, and comprehensive ranking system."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "software",
     "category": "Software",
-    "icon": "💿",
+    "icon": "",
     "description": "Free and cracked software downloads, activation tools and utilities.",
     "links": [
       {
         "name": "GetIntoPC",
         "url": "https://getintopc.com/",
-        "tags": ["software", "windows"],
-        "description": "Software download catalog with direct access links."
+        "tags": ["software", "windows", "downloads"],
+        "description": "Software catalog featuring direct download links, reviews, and thousands of Windows applications."
       },
       {
         "name": "Softpedia",
         "url": "https://www.softpedia.com/",
-        "tags": ["software", "freeware"],
-        "description": "Verified freeware and shareware catalog, millions of apps."
+        "tags": ["software", "freeware", "shareware"],
+        "description": "Verified freeware and shareware directory with millions of applications and safety reviews."
       },
       {
         "name": "MajorGeeks",
         "url": "https://www.majorgeeks.com/",
-        "tags": ["software", "utilities"],
-        "description": "Trusted source for Windows utilities, tools and drivers."
+        "tags": ["software", "utilities", "drivers"],
+        "description": "Trusted download site for Windows utilities, drivers, tools, and software recommendations."
       }
     ]
   },
   {
     "id": "games",
     "category": "Games",
-    "icon": "🎮",
+    "icon": "",
     "description": "Repacked and pre-cracked PC games with compressed download sizes.",
     "links": [
       {
         "name": "FitGirl Repacks",
         "url": "https://fitgirl-repacks.site/",
-        "tags": ["games", "repacks"],
-        "description": "Compressed game repacks for quick downloads."
+        "tags": ["games", "repacks", "lossless"],
+        "description": "Lossless game repacks compressed with XTool, featuring MD5 verification and multiple mirror downloads."
       },
       {
         "name": "DODI Repacks",
         "url": "https://dodi-repacks.site/",
-        "tags": ["games", "repacks"],
-        "description": "Alternative game repack library with frequent updates."
+        "tags": ["games", "repacks", "mirrors"],
+        "description": "Game repack library with frequent updates, multipart RAR files, and torrent availability."
       },
       {
         "name": "Online-Fix",
         "url": "https://online-fix.me/",
-        "tags": ["games", "multiplayer"],
-        "description": "Multiplayer fixes and online play patches for PC games."
+        "tags": ["games", "multiplayer", "fixes"],
+        "description": "Multiplayer fixes, online patches, and cracked executables for enabling online play on PC games."
       },
       {
         "name": "GameDrive",
         "url": "https://gamedrive.org/",
-        "tags": ["games", "software"],
-        "description": "Searchable catalog for games and related tools."
+        "tags": ["games", "catalog", "software"],
+        "description": "Searchable database of games, software, and gaming-related tools with direct links."
       }
     ]
   },
   {
     "id": "streaming",
     "category": "Streaming",
-    "icon": "📺",
+    "icon": "",
     "description": "Free movie, TV series and anime streaming sources.",
     "subcategories": [
       {
         "id": "movies",
-        "label": "Movie",
-        "icon": "🎬",
+        "label": "Movies & TV",
+        "icon": "",
         "links": [
           {
             "name": "Cineby",
             "url": "https://cineby.sc/",
-            "tags": ["movies", "tv-series"],
-            "description": "Modern UI for streaming movies and TV series."
+            "tags": ["movies", "tv", "streaming"],
+            "description": "Movie and TV streaming with modern UI, top 10 daily charts, trending content, and genre browsing."
           },
           {
             "name": "StreameX",
             "url": "https://streamex.sh/",
-            "tags": ["movies", "tv-series"],
-            "description": "Fast streaming source for films and shows."
+            "tags": ["movies", "tv", "streaming"],
+            "description": "Fast streaming source for films, TV shows, and content across multiple categories."
           },
           {
             "name": "1shows",
             "url": "https://www.1shows.org",
             "tags": ["movies", "tv", "sports"],
-            "description": "Quick access to movies and television content."
+            "description": "Quick-access streaming platform for movies, television shows, and sports events."
+          },
+          {
+            "name": "Streaming index",
+            "url": "https://www.bestfreestreaming.org/",
+            "tags": ["movies", "tv", "index"],
+            "description": "Curated index linking to currently working free streaming websites for films and shows."
           }
         ]
       },
       {
         "id": "anime",
         "label": "Anime",
-        "icon": "⛩️",
+        "icon": "",
         "links": [
           {
             "name": "Animetsu",
             "url": "https://animetsu.live/",
-            "tags": ["anime"],
-            "description": "Anime streaming with modern interface and good selection."
+            "tags": ["anime", "streaming", "community"],
+            "description": "Anime streaming platform with modern interface, episode availability, and active community comments."
           },
           {
             "name": "Anikoto",
             "url": "https://anikototv.to/",
-            "tags": ["anime"],
-            "description": "Large library, reuploaded Hianime's videos"
+            "tags": ["anime", "catalog", "episodes"],
+            "description": "Anime library hosting reuploaded Hianime content with extensive episode catalog."
           },
           {
             "name": "Re:anime",
             "url": "https://reanime.to/",
-            "tags": ["anime"],
-            "description": "Anime catalog with episode listings and search."
+            "tags": ["anime", "search", "catalog"],
+            "description": "Anime database with episode cataloging, advanced search, and community features."
           },
           {
             "name": "AnimePahe",
             "url": "https://animepahe.pw/",
-            "tags": ["anime", "compressed"],
-            "description": "Lightweight anime source for episodes and releases."
+            "tags": ["anime", "compressed", "episodes"],
+            "description": "Lightweight anime streaming source offering compressed episodes and latest releases."
+          },
+          {
+            "name": "EverythingMoe",
+            "url": "https://everythingmoe.com/",
+            "tags": ["anime", "index", "directory"],
+            "description": "Directory of currently working free anime and Asian content streaming websites."
           }
         ]
       }
@@ -124,56 +214,56 @@
   {
     "id": "domain",
     "category": "Domain",
-    "icon": "🌐",
+    "icon": "",
     "description": "Register free or cheap domain names and subdomains for your projects.",
     "subcategories": [
       {
         "id": "free-domains",
         "label": "Free",
-        "icon": "🆓",
+        "icon": "",
         "links": [
           {
             "name": "WordPress",
             "url": "https://wordpress.com/start/domain-for-gravatar/domain-only?search=yes&new=",
-            "tags": ["domain", "free"],
+            "tags": ["domains", "wordpress", "free"],
             "description": "WordPress offering free domains for gravater partnership (card needed)."
           },
           {
             "name": "FreeDNS Afraid",
             "url": "http://freedns.afraid.org",
-            "tags": ["subdomain", "dns"],
-            "description": "Free dynamic DNS and subdomain management service."
+            "tags": ["dns", "dynamic-dns", "subdomains"],
+            "description": "Free dynamic DNS service with subdomain management and automatic IP updates."
           },
           {
             "name": "No-IP",
             "url": "https://noip.net",
-            "tags": ["subdomain", "dynamic-dns"],
-            "description": "Dynamic DNS and free subdomain provider."
+            "tags": ["dns", "dynamic-dns", "subdomains"],
+            "description": "Dynamic DNS provider offering free subdomains and automatic IP address tracking."
           },
           {
             "name": "is-a.dev",
             "url": "https://www.is-a.dev/",
-            "tags": ["subdomain", "developer"],
-            "description": "Free .is-a.dev subdomain for developers via GitHub."
+            "tags": ["subdomains", "developer", "github"],
+            "description": "Free .is-a.dev subdomain registration for developers, authenticated via GitHub OAuth."
           }
         ]
       },
       {
         "id": "cheap-domains",
         "label": "Cheap",
-        "icon": "💸",
+        "icon": "",
         "links": [
           {
             "name": "DomainOffer",
             "url": "https://domainoffer.net/",
-            "tags": ["domain", "cheap"],
+            "tags": ["domains", "offers", "cheap"],
             "description": "Low-cost domain offers."
           },
           {
             "name": "Namecheap",
             "url": "https://www.namecheap.com/",
-            "tags": ["domain", "cheap"],
-            "description": "Affordable domain registrar with free privacy protection."
+            "tags": ["domains", "registrar", "privacy"],
+            "description": "Affordable domain registrar offering competitive pricing and free WHOIS privacy protection."
           }
         ]
       }
