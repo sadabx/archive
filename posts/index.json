@@ -1,0 +1,29 @@
+[
+  {
+    "file": "posts/wslu.md",
+    "title": "Windows Local Password Recovery (Utilman Method)",
+    "date": "2026-05-12",
+    "cat": "windows",
+    "catLabel": "Windows Systems",
+    "tags": ["windows", "lockscreen", "recovery"],
+    "desc": "Reset a forgotten Local Administrator password on Windows 10 or 11 using the WinRE utility swap without losing data."
+  },
+  {
+    "file": "posts/ms-activation.md",
+    "title": "Microsoft Activation Scripts (MAS) Guide",
+    "date": "2026-05-10",
+    "cat": "windows",
+    "catLabel": "Windows Systems",
+    "tags": ["activation", "script", "powershell"],
+    "desc": "Educational documentation for managing activation states for Windows and Office via PowerShell."
+  },
+  {
+    "file": "posts/idm.md",
+    "title": "Internet Download Manager (IDM) Activation",
+    "date": "2026-05-08",
+    "cat": "software",
+    "catLabel": "Software Tools",
+    "tags": ["idm", "download", "patch"],
+    "desc": "Methods to activate IDM for free, covering both lifetime activation and trial reset procedures."
+  }
+]

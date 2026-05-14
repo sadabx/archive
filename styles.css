@@ -1,0 +1,813 @@
+/* ── Arch Wiki Theme ── */
+@import url('https://fonts.googleapis.com/css2?family=Linux+Libertine:ital,wght@0,400;0,600;0,700;1,400&family=Liberation+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --bg:        #1a1a1a;
+    --bg-panel:  #242424;
+    --bg-hover:  #2e2e2e;
+    --bg-active: #313131;
+    --border:    #3d3d3d;
+    --border-soft: #303030;
+
+    --text:      #e8e6e3;
+    --text-muted:#9a9996;
+    --text-dim:  #6e6d6b;
+
+    --link:      #62a0ea;
+    --link-visited: #c061cb;
+    --link-hover:#99c1f1;
+
+    --accent:    #57af9e;
+    --accent-dim: rgba(87,175,158,0.18);
+    --warn-bg:   rgba(246,189,117,0.1);
+    --warn-bdr:  #c88800;
+    --danger-bg: rgba(255,122,122,0.1);
+    --danger-bdr:#e01b24;
+
+    --toc-bg:    #1e1e1e;
+    --toc-bdr:   #3a3a3a;
+
+    --code-bg:   #161616;
+    --shadow:    0 2px 12px rgba(0,0,0,0.5);
+
+    --sidebar-w: 260px;
+    --content-max: 860px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Liberation Sans', 'DejaVu Sans', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 15px;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+a:visited { color: var(--link-visited); }
+
+/* ── Site Header ── */
+.site-header {
+    background: #111;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.6);
+}
+
+.header-content {
+    max-width: calc(var(--sidebar-w) + var(--content-max) + 100px);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    height: 48px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 24px;
+    border-right: 1px solid var(--border);
+    min-width: var(--sidebar-w);
+}
+
+.logo h1 {
+    font-family: 'Linux Libertine', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.logo h1 .logo-pi {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.tagline {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 0;
+}
+
+.main-nav a {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    padding: 0 14px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+    background: rgba(255,255,255,0.03);
+}
+
+/* ── Page Layout ── */
+.page-layout {
+    max-width: calc(var(--sidebar-w) + var(--content-max) + 100px);
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+    display: grid;
+    grid-template-columns: var(--sidebar-w) 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+/* ── Left Sidebar (TOC style) ── */
+.left-sidebar {
+    position: sticky;
+    top: 72px;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+}
+
+.toc-box {
+    background: var(--toc-bg);
+    border: 1px solid var(--toc-bdr);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.toc-title {
+    font-family: 'Linux Libertine', Georgia, serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--toc-bdr);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.toc-title .toc-icon { opacity: 0.7; font-size: 0.9em; }
+
+.toc-nav { padding: 6px 0; }
+
+.toc-section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    padding: 10px 14px 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.toc-section-label:not(:first-child) {
+    border-top: 1px solid var(--border-soft);
+    margin-top: 6px;
+}
+
+.toc-item {
+    display: flex;
+    width: 100%;
+    appearance: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 6px 14px 6px 14px;
+    text-align: left;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    transition: background 0.12s, color 0.12s;
+    border-left: 2px solid transparent;
+    align-items: center;
+    gap: 8px;
+}
+
+.toc-item:hover {
+    background: var(--bg-hover);
+    color: var(--text);
+}
+
+.toc-item.active {
+    background: var(--bg-active);
+    color: var(--text);
+    border-left-color: var(--accent);
+}
+
+.toc-item .toc-num {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    min-width: 20px;
+    font-family: 'Liberation Mono', monospace;
+}
+
+.toc-sub-item {
+    padding-left: 30px;
+    font-size: 0.83rem;
+}
+
+.toc-sub-item .toc-num { font-size: 0.7rem; }
+
+.toc-count {
+    margin-left: auto;
+    font-size: 0.7rem;
+    background: var(--bg-hover);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1px 7px;
+    color: var(--text-dim);
+}
+
+/* Guides section in TOC */
+.toc-guide-item {
+    padding: 6px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+    appearance: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    border-left: 2px solid transparent;
+    transition: background 0.12s, color 0.12s;
+}
+
+.toc-guide-item:hover { background: var(--bg-hover); }
+.toc-guide-item.active { background: var(--bg-active); border-left-color: var(--accent); }
+
+.toc-guide-item .guide-name {
+    color: var(--link);
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.toc-guide-item:hover .guide-name { text-decoration: underline; }
+
+.toc-guide-item .guide-date {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    font-family: monospace;
+}
+
+/* ── Main Content ── */
+.main-content { min-width: 0; }
+
+/* ── Wiki Page Header ── */
+.wiki-page-header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.wiki-page-title {
+    font-family: 'Linux Libertine', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.wiki-page-subtitle {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+/* ── Stats Bar ── */
+.stats-bar {
+    display: flex;
+    gap: 20px;
+    padding: 10px 16px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.stat-item .stat-val {
+    font-weight: 700;
+    color: var(--accent);
+    font-family: monospace;
+}
+
+.stat-item .stat-label { color: var(--text-muted); }
+
+/* ── Wiki Section (category block) ── */
+.wiki-section {
+    margin-bottom: 28px;
+}
+
+.wiki-section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.wiki-section-number {
+    font-family: 'Linux Libertine', Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    min-width: 28px;
+}
+
+.wiki-section-title {
+    font-family: 'Linux Libertine', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--text);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wiki-section-toggle {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-left: auto;
+    font-family: monospace;
+    padding: 2px 8px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: background 0.12s;
+}
+
+.wiki-section-toggle:hover { background: var(--bg-hover); color: var(--text); }
+
+.wiki-section-body { /* visible by default */ }
+.wiki-section-body.collapsed { display: none; }
+
+.wiki-section-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+/* ── Sub-section (e.g. Movie / Anime inside Streaming) ── */
+.wiki-subsection {
+    margin-bottom: 16px;
+    margin-left: 0;
+}
+
+.wiki-subsection-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+}
+
+.wiki-subsection-number {
+    font-family: monospace;
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    min-width: 36px;
+}
+
+.wiki-subsection-title {
+    font-family: 'Linux Libertine', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ── Link Table ── */
+.link-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+}
+
+.link-table thead th {
+    text-align: left;
+    padding: 6px 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-dim);
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid var(--border);
+}
+
+.link-table tbody tr {
+    border-bottom: 1px solid var(--border-soft);
+    transition: background 0.1s;
+}
+
+.link-table tbody tr:last-child { border-bottom: none; }
+.link-table tbody tr:hover { background: var(--bg-hover); }
+
+.link-table td { padding: 9px 10px; vertical-align: middle; }
+
+.link-table .col-icon { width: 36px; text-align: center; }
+
+.site-favicon {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.site-favicon-fallback {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    background: var(--bg-hover);
+    border: 1px solid var(--border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.col-name { width: 180px; }
+.col-name a {
+    color: var(--link);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.col-name a:hover { text-decoration: underline; }
+.col-desc { color: var(--text-muted); font-size: 0.84rem; }
+
+.tag-pill {
+    display: inline-block;
+    background: var(--bg-hover);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    text-transform: lowercase;
+    font-family: monospace;
+    margin-right: 3px;
+}
+
+/* ── Guide / Post View ── */
+.guide-article {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.guide-article-header {
+    padding: 16px 20px 12px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+}
+
+.guide-article-title {
+    font-family: 'Linux Libertine', Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.guide-article-meta {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    font-family: monospace;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.guide-article-body {
+    padding: 20px;
+}
+
+.guide-article-body .tut-content { font-size: 0.9rem; }
+
+.guide-article-body h3 {
+    font-family: 'Linux Libertine', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 4px;
+    margin: 18px 0 10px;
+    color: var(--text);
+}
+
+.guide-article-body pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 12px 14px;
+    overflow-x: auto;
+    font-family: 'Liberation Mono', 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #d0e8c0;
+    margin: 10px 0;
+}
+
+.guide-article-body code {
+    font-family: 'Liberation Mono', monospace;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1px 5px;
+    color: var(--accent);
+    font-size: 0.88em;
+}
+
+.guide-article-body .warning {
+    background: var(--danger-bg);
+    border-left: 3px solid var(--danger-bdr);
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    color: #ffbcbc;
+    font-size: 0.88rem;
+    border-radius: 0 3px 3px 0;
+}
+
+.guide-article-body .note {
+    background: var(--warn-bg);
+    border-left: 3px solid var(--warn-bdr);
+    padding: 10px 14px;
+    margin-top: 14px;
+    color: #f0d090;
+    font-size: 0.88rem;
+    border-radius: 0 3px 3px 0;
+}
+
+.guide-article-body .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.step-num {
+    background: var(--bg-hover);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    min-width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: monospace;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.divider { text-align: center; color: var(--text-dim); margin: 16px 0; letter-spacing: 4px; }
+
+/* ── Rendered Markdown body ── */
+.guide-desc-lead {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+    border-left: 3px solid var(--border);
+    padding-left: 12px;
+}
+
+.md-body { font-size: 0.9rem; line-height: 1.75; }
+
+.md-body h1 { display: none; } /* title already in header */
+.md-body h2 {
+    font-family: 'Linux Libertine', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 4px;
+    margin: 22px 0 10px;
+    color: var(--text);
+}
+.md-body h3 {
+    font-family: 'Linux Libertine', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 16px 0 8px;
+    color: var(--text);
+}
+.md-body h4 { font-size: 0.92rem; margin: 12px 0 6px; color: var(--text-muted); }
+
+.md-body p { margin-bottom: 10px; }
+
+.md-body ul, .md-body ol {
+    padding-left: 22px;
+    margin-bottom: 10px;
+}
+.md-body li { margin-bottom: 4px; }
+
+.md-body a { color: var(--link); }
+.md-body a:hover { text-decoration: underline; color: var(--link-hover); }
+
+.md-body strong { color: var(--text); font-weight: 700; }
+.md-body em { color: var(--text-muted); }
+
+.md-body code {
+    font-family: 'Liberation Mono', 'Courier New', monospace;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1px 5px;
+    color: var(--accent);
+    font-size: 0.88em;
+}
+
+.md-body pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    margin: 12px 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+.md-body pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #d0e8c0;
+    font-size: inherit;
+}
+
+.md-body blockquote {
+    border-left: 3px solid var(--warn-bdr);
+    background: var(--warn-bg);
+    margin: 12px 0;
+    padding: 10px 14px;
+    border-radius: 0 3px 3px 0;
+    color: #f0d090;
+    font-size: 0.88rem;
+}
+.md-body blockquote p { margin: 0; }
+.md-body blockquote strong { color: #f6bf75; }
+
+.md-body hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 18px 0;
+}
+
+.md-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.87rem;
+}
+.md-body table th, .md-body table td {
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+.md-body table th {
+    background: rgba(255,255,255,0.03);
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    font-family: monospace;
+}
+.breadcrumb-sep { opacity: 0.5; }
+.breadcrumb-current { color: var(--text-muted); }
+
+/* ── Empty / Loading ── */
+.loading, .empty-state {
+    color: var(--text-muted);
+    padding: 16px 0;
+    font-style: italic;
+    font-size: 0.88rem;
+}
+
+/* ── Footer ── */
+.site-footer {
+    background: #111;
+    border-top: 1px solid var(--border);
+    padding: 28px 20px;
+    margin-top: 40px;
+}
+
+.footer-inner {
+    max-width: calc(var(--sidebar-w) + var(--content-max) + 100px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-note {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+.footer-copy {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    font-family: monospace;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-top: 16px;
+    }
+
+    .left-sidebar {
+        position: static;
+        max-height: none;
+    }
+
+    .toc-box {
+        margin-bottom: 20px;
+    }
+
+    .logo { min-width: auto; }
+
+    .stats-bar { gap: 12px; }
+
+    .col-desc { display: none; }
+}
+
+@media (max-width: 600px) {
+    .header-content { padding: 0 14px; }
+    .logo { padding-right: 14px; }
+    .wiki-page-title { font-size: 1.45rem; }
+    .link-table .col-name { width: auto; }
+}

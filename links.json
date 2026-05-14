@@ -1,0 +1,182 @@
+[
+  {
+    "id": "software",
+    "category": "Software",
+    "icon": "💿",
+    "description": "Free and cracked software downloads, activation tools and utilities.",
+    "links": [
+      {
+        "name": "GetIntoPC",
+        "url": "https://getintopc.com/",
+        "tags": ["software", "windows"],
+        "description": "Software download catalog with direct access links."
+      },
+      {
+        "name": "Softpedia",
+        "url": "https://www.softpedia.com/",
+        "tags": ["software", "freeware"],
+        "description": "Verified freeware and shareware catalog, millions of apps."
+      },
+      {
+        "name": "MajorGeeks",
+        "url": "https://www.majorgeeks.com/",
+        "tags": ["software", "utilities"],
+        "description": "Trusted source for Windows utilities, tools and drivers."
+      }
+    ]
+  },
+  {
+    "id": "games",
+    "category": "Games",
+    "icon": "🎮",
+    "description": "Repacked and pre-cracked PC games with compressed download sizes.",
+    "links": [
+      {
+        "name": "FitGirl Repacks",
+        "url": "https://fitgirl-repacks.site/",
+        "tags": ["games", "repacks"],
+        "description": "Compressed game repacks for quick downloads."
+      },
+      {
+        "name": "DODI Repacks",
+        "url": "https://dodi-repacks.site/",
+        "tags": ["games", "repacks"],
+        "description": "Alternative game repack library with frequent updates."
+      },
+      {
+        "name": "Online-Fix",
+        "url": "https://online-fix.me/",
+        "tags": ["games", "multiplayer"],
+        "description": "Multiplayer fixes and online play patches for PC games."
+      },
+      {
+        "name": "GameDrive",
+        "url": "https://gamedrive.org/",
+        "tags": ["games", "software"],
+        "description": "Searchable catalog for games and related tools."
+      }
+    ]
+  },
+  {
+    "id": "streaming",
+    "category": "Streaming",
+    "icon": "📺",
+    "description": "Free movie, TV series and anime streaming sources.",
+    "subcategories": [
+      {
+        "id": "movies",
+        "label": "Movie",
+        "icon": "🎬",
+        "links": [
+          {
+            "name": "Cineby",
+            "url": "https://cineby.sc/",
+            "tags": ["movies", "tv-series"],
+            "description": "Modern UI for streaming movies and TV series."
+          },
+          {
+            "name": "StreameX",
+            "url": "https://streamex.sh/",
+            "tags": ["movies", "tv-series"],
+            "description": "Fast streaming source for films and shows."
+          },
+          {
+            "name": "1shows",
+            "url": "https://www.1shows.org",
+            "tags": ["movies", "tv", "sports"],
+            "description": "Quick access to movies and television content."
+          }
+        ]
+      },
+      {
+        "id": "anime",
+        "label": "Anime",
+        "icon": "⛩️",
+        "links": [
+          {
+            "name": "Animetsu",
+            "url": "https://animetsu.live/",
+            "tags": ["anime"],
+            "description": "Anime streaming with modern interface and good selection."
+          },
+          {
+            "name": "Anikoto",
+            "url": "https://anikototv.to/",
+            "tags": ["anime"],
+            "description": "Large library, reuploaded Hianime's videos"
+          },
+          {
+            "name": "Re:anime",
+            "url": "https://reanime.to/",
+            "tags": ["anime"],
+            "description": "Anime catalog with episode listings and search."
+          },
+          {
+            "name": "AnimePahe",
+            "url": "https://animepahe.pw/",
+            "tags": ["anime", "compressed"],
+            "description": "Lightweight anime source for episodes and releases."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "domain",
+    "category": "Domain",
+    "icon": "🌐",
+    "description": "Register free or cheap domain names and subdomains for your projects.",
+    "subcategories": [
+      {
+        "id": "free-domains",
+        "label": "Free",
+        "icon": "🆓",
+        "links": [
+          {
+            "name": "WordPress",
+            "url": "https://wordpress.com/start/domain-for-gravatar/domain-only?search=yes&new=",
+            "tags": ["domain", "free"],
+            "description": "WordPress offering free domains for gravater partnership (card needed)."
+          },
+          {
+            "name": "FreeDNS Afraid",
+            "url": "http://freedns.afraid.org",
+            "tags": ["subdomain", "dns"],
+            "description": "Free dynamic DNS and subdomain management service."
+          },
+          {
+            "name": "No-IP",
+            "url": "https://noip.net",
+            "tags": ["subdomain", "dynamic-dns"],
+            "description": "Dynamic DNS and free subdomain provider."
+          },
+          {
+            "name": "is-a.dev",
+            "url": "https://www.is-a.dev/",
+            "tags": ["subdomain", "developer"],
+            "description": "Free .is-a.dev subdomain for developers via GitHub."
+          }
+        ]
+      },
+      {
+        "id": "cheap-domains",
+        "label": "Cheap",
+        "icon": "💸",
+        "links": [
+          {
+            "name": "DomainOffer",
+            "url": "https://domainoffer.net/",
+            "tags": ["domain", "cheap"],
+            "description": "Low-cost domain offers."
+          },
+          {
+            "name": "Namecheap",
+            "url": "https://www.namecheap.com/",
+            "tags": ["domain", "cheap"],
+            "description": "Affordable domain registrar with free privacy protection."
+          }
+        ]
+      }
+    ]
+  }
+]
