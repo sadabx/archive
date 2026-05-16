@@ -1,14 +1,11 @@
 # π archive
 
-A curated resource wiki with an Arch Wiki-inspired dark interface.
+Curated resource wiki - ( Arch Wiki-inspired )
 
 ## Features
 
-- **Dark Wiki UI** — Linux Libertine headings, monospace accents, sticky TOC sidebar
-- **Live Search** — Instant filtering across all resources; `Ctrl K` to focus
-- **Hierarchical Categories** — Nested sub-categories with collapsible sections
-- **Markdown Guides** — Individual `.md` files rendered client-side via [marked.js](https://github.com/markedjs/marked)
-- **Data-Driven** — Add resources and guides without modifying HTML or JS
+- **Usefull links**
+- **Usefull guides**
 
 ## Structure
 
@@ -28,12 +25,13 @@ Edit `links.json`. Flat category:
 
 ```json
 {
-  "id": "tools",
-  "category": "Tools",
-  "icon": "🧰",
-  "description": "Useful utilities.",
+  "id": "",
+  "category": "",
+  "icon": "",
+  "description": "",
   "links": [
-    { "name": "GitHub", "url": "https://github.com", "tags": ["dev"], "description": "Code hosting." }
+    { "name": "", "url": "", "tags": [""], "description": "" },
+    { "name": "", "url": "", "tags": [""], "description": "" }
   ]
 }
 ```
@@ -42,12 +40,29 @@ Category with sub-categories:
 
 ```json
 {
-  "id": "streaming",
-  "category": "Streaming",
-  "icon": "📺",
+  "id": "",
+  "category": "",
+  "icon": "",
+  "description": "",
   "subcategories": [
-    { "id": "movies", "label": "Movies & TV", "icon": "🎬", "links": [ ... ] },
-    { "id": "anime",  "label": "Anime",        "icon": "⛩️", "links": [ ... ] }
+    {
+      "id": "",
+      "label": "",
+      "icon": "",
+      "links": [
+        { "name": "", "url": "", "tags": [""], "description": "" },
+        { "name": "", "url": "", "tags": [""], "description": "" }
+      ]
+    },
+    {
+      "id": "",
+      "label": "",
+      "icon": "",
+      "links": [
+        { "name": "", "url": "", "tags": [""], "description": "" },
+        { "name": "", "url": "", "tags": [""], "description": "" }
+      ]
+    }
   ]
 }
 ```
