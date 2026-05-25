@@ -202,10 +202,22 @@
         "icon": "",
         "links": [
           {
+            "name": "StreamEast",
+            "url": "https://istreameast.pro",
+            "tags": ["live-sports", "f1", "streaming"],
+            "description": "Modern website with live sports coverage for multiple sports, stream chat."
+          },
+          {
+            "name": "F1 Live",
+            "url": "https://f1live.dpdns.org/stream",
+            "tags": ["live-sports", "f1", "streaming"],
+            "description": "Live streaming of Formula 1 races and events."
+          },
+          {
             "name": "VipBox",
             "url": "https://www.vipbox.sc/",
             "tags": ["live-sports", "streaming", "events"],
-            "description": "Live sports streaming directory offering links for various international sporting events and broadcasts."
+            "description": "live sports streaming platform covering a wide range of sports and events globally."
           }
         ]
       }
