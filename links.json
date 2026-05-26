@@ -203,9 +203,18 @@
         "links": [
           {
             "name": "StreamEast",
-            "url": "https://istreameast.pro",
+            "urls": [
+              "https://istreameast.pro",
+              "https://streamseast.cc",
+              "https://streamseast.top/"
+            ],
             "tags": ["live-sports", "f1", "streaming"],
             "description": "Modern website with live sports coverage for multiple sports, stream chat."
+          },
+          {
+            "name": "BuffStreams",
+            "url": "https://buffstreams.plus",
+            "tags": ["live-sports", "f1", "streaming"]
           },
           {
             "name": "F1 Live",
@@ -216,7 +225,7 @@
           {
             "name": "VipBox",
             "url": "https://www.vipbox.sc/",
-            "tags": ["live-sports", "streaming", "events"],
+            "tags": ["live-sports", "streaming", "f1"],
             "description": "live sports streaming platform covering a wide range of sports and events globally."
           }
         ]

@@ -116,12 +116,6 @@ a:visited {
     font-style: italic;
 }
 
-.tagline {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    letter-spacing: 0.03em;
-}
-
 .main-nav {
     display: flex;
     align-items: center;
@@ -182,18 +176,13 @@ a:visited {
 .nav-toggle[aria-expanded="true"] span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
+
 .nav-toggle[aria-expanded="true"] span:nth-child(2) {
     opacity: 0;
 }
+
 .nav-toggle[aria-expanded="true"] span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
-}
-
-
-/* ── Search: highlighted row ── */
-.search-match {
-    outline: 1px solid var(--accent);
-    outline-offset: -1px;
 }
 
 /* ── Search: empty result notice ── */
@@ -262,7 +251,8 @@ a:visited {
     margin-left: auto;
     font-size: 0.8em;
     transition: transform 0.2s;
-    display: none; /* shown only on mobile */
+    display: none;
+    /* shown only on mobile */
 }
 
 .toc-title .toc-icon {
@@ -707,6 +697,95 @@ a:visited {
     margin-right: 3px;
 }
 
+/* ── Multi-URL badge & expandable row ── */
+.col-name-inner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* "[+3]" monospace badge — matches wiki [hide]/[show] style */
+.url-count-badge {
+    display: inline;
+    font-size: 0.75rem;
+    font-family: 'Liberation Mono', monospace;
+    color: var(--text-dim);
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.1s;
+}
+
+.url-count-badge:hover {
+    color: var(--link);
+}
+
+.url-count-badge--open {
+    color: var(--text-muted);
+}
+
+/* Hidden expand row — collapsed by default */
+.mirror-expand-row {
+    display: none;
+}
+
+.mirror-expand-row.mirror-row-open {
+    display: table-row;
+}
+
+.mirror-expand-cell {
+    padding: 4px 10px 8px 46px !important;
+    border-bottom: 1px solid var(--border-soft) !important;
+    border-top: 1px solid var(--border-soft);
+}
+
+.mirror-expand-inner {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.mirror-expand-label {
+    font-size: 0.72rem;
+    font-family: 'Liberation Mono', monospace;
+    color: var(--text-dim);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.mirror-expand-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+/* Plain link list separated by middots — wiki style */
+.mirror-url-btn {
+    font-size: 0.8rem;
+    font-family: 'Liberation Mono', monospace;
+    color: var(--link);
+    text-decoration: none;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.mirror-url-btn::after {
+    content: ' · ';
+    color: var(--text-dim);
+}
+
+.mirror-url-btn:last-child::after {
+    content: '';
+}
+
+.mirror-url-btn:hover {
+    text-decoration: underline;
+}
+
 /* ── Guide / Post View ── */
 .guide-article {
     background: var(--bg-panel);
@@ -804,30 +883,6 @@ a:visited {
     gap: 10px;
     margin-bottom: 8px;
     font-size: 0.9rem;
-}
-
-.step-num {
-    background: var(--bg-hover);
-    border: 1px solid var(--border);
-    color: var(--accent);
-    min-width: 22px;
-    height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 0.75rem;
-    font-weight: 700;
-    font-family: monospace;
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.divider {
-    text-align: center;
-    color: var(--text-dim);
-    margin: 16px 0;
-    letter-spacing: 4px;
 }
 
 /* ── Rendered Markdown body ── */
@@ -1181,15 +1236,19 @@ a:visited {
     .toc-title {
         cursor: pointer;
     }
+
     .toc-title:hover {
-        background: rgba(255,255,255,0.05);
+        background: rgba(255, 255, 255, 0.05);
     }
+
     .toc-chevron {
         display: block;
     }
+
     .toc-nav.toc-collapsed {
         display: none;
     }
+
     .toc-title[aria-expanded="false"] .toc-chevron {
         transform: rotate(-90deg);
     }
@@ -1223,6 +1282,7 @@ a:visited {
 }
 
 @media (max-width: 640px) {
+
     /* Header becomes 2-row on mobile */
     .header-content {
         flex-wrap: wrap;
@@ -1263,7 +1323,7 @@ a:visited {
         min-width: 0;
         flex: 1;
         padding: 0 10px;
-        background: rgba(0,0,0,0.35);
+        background: rgba(0, 0, 0, 0.35);
         border-color: var(--border);
     }
 

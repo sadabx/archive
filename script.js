@@ -22,36 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('year').textContent = new Date().getFullYear();
     configureMd();
 
-    // Nav links
-    document.getElementById('nav-home').addEventListener('click', e => {
-        e.preventDefault();
-        setView('all', null, null);
-        setActiveNav('nav-home');
-        closeNav();
-    });
-    document.getElementById('nav-resources').addEventListener('click', e => {
-        e.preventDefault();
-        setView('all', null, null);
-        setActiveNav('nav-resources');
-        closeNav();
-    });
-    document.getElementById('nav-guides').addEventListener('click', e => {
-        e.preventDefault();
-        if (state.posts.length) { setView('guide', 'guide-0', null); setActiveNav('nav-guides'); }
-        closeNav();
-    });
+    // Nav links - header and footer
+    const navActions = {
+        'nav-home': () => setView('all', null, null),
+        'footer-home': () => { setView('all', null, null); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+        'nav-resources': () => setView('all', null, null),
+        'footer-resources': () => { setView('all', null, null); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+        'nav-guides': () => { if (state.posts.length) { setView('guide', 'guide-0', null); } },
+        'footer-guides': () => { if (state.posts.length) { setView('guide', 'guide-0', null); } window.scrollTo({ top: 0, behavior: 'smooth' }); },
+    };
 
-    // Footer quick links
-    document.getElementById('footer-home').addEventListener('click', e => {
-        e.preventDefault(); setView('all', null, null); setActiveNav('nav-home'); window.scrollTo({top:0,behavior:'smooth'});
-    });
-    document.getElementById('footer-resources').addEventListener('click', e => {
-        e.preventDefault(); setView('all', null, null); setActiveNav('nav-resources'); window.scrollTo({top:0,behavior:'smooth'});
-    });
-    document.getElementById('footer-guides').addEventListener('click', e => {
-        e.preventDefault();
-        if (state.posts.length) { setView('guide', 'guide-0', null); setActiveNav('nav-guides'); }
-        window.scrollTo({top:0,behavior:'smooth'});
+    Object.keys(navActions).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                navActions[id]();
+                if (id.startsWith('nav-')) setActiveNav(id);
+                if (id.startsWith('nav-')) closeNav();
+            });
+        }
     });
 
     // Hamburger toggle
@@ -169,6 +159,8 @@ function applySearch(query) {
                 link.name,
                 link.description || '',
                 ...(link.tags || []),
+                link.url || '',
+                ...(link.urls || []),
             ].join(' ').toLowerCase();
             if (haystack.includes(q)) {
                 results.push({ link, cat });
@@ -194,22 +186,45 @@ function renderSearchResults(query, results) {
         return;
     }
 
-    const rows = results.map(({ link, cat }) => {
-        const favicon = getFavicon(link.url);
-        const fallback = getFallback(link.name, link.url);
+    const rows = results.map(({ link, cat }, idx) => {
+        const primaryUrl = link.url || (link.urls && link.urls[0]);
+        const favicon = getFavicon(primaryUrl);
+        const fallback = getFallback(link.name, primaryUrl);
         const tags = (link.tags || []).map(t => `<span class="tag-pill">${t}</span>`).join('');
-        return `<tr>
+        const hasUrls = link.urls && link.urls.length > 1;
+        const mirrorId = `search_mir_${link.name.replace(/[^a-z0-9]/gi, '_')}_${idx}`;
+        const badge = hasUrls
+            ? `<button class="url-count-badge" onclick="toggleMirrorRow('${mirrorId}',this)" aria-expanded="false" aria-label="Show alternate URLs">[+${link.urls.length - 1}]</button>`
+            : '';
+        const mirrorRow = hasUrls ? (() => {
+            const urlItems = link.urls.slice(1).map(u => {
+                const domain = new URL(u).hostname.replace(/^www\./, '');
+                return `<a href="${u}" target="_blank" rel="noopener noreferrer" class="mirror-url-btn">${domain}</a>`;
+            }).join('');
+            return `<tr class="mirror-expand-row" id="${mirrorId}">
+                <td colspan="3" class="mirror-expand-cell">
+                    <div class="mirror-expand-inner">
+                        <span class="mirror-expand-label">Alternate URLs</span>
+                        <div class="mirror-expand-links">${urlItems}</div>
+                    </div>
+                </td>
+            </tr>`;
+        })() : '';
+        return `<tr class="link-row${hasUrls ? ' has-mirrors' : ''}">
             <td class="col-icon">
                 <img class="site-favicon" src="${favicon}" alt="" loading="lazy"
                     onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';">
                 <span class="site-favicon-fallback" style="display:none">${fallback}</span>
             </td>
             <td class="col-name">
-                <a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.name}</a>
+                <span class="col-name-inner">
+                    <a href="${primaryUrl}" target="_blank" rel="noopener noreferrer">${link.name}</a>
+                    ${badge}
+                </span>
                 <div style="font-size:0.72rem;color:var(--text-dim);margin-top:2px;">${cat.icon} ${cat.category}</div>
             </td>
             <td class="col-desc">${link.description || ''} ${tags}</td>
-        </tr>`;
+        </tr>${mirrorRow}`;
     }).join('');
 
     main.innerHTML = `
@@ -505,21 +520,47 @@ function renderCategorySection(cat, num, collapsible) {
 /* ── Link table ── */
 function renderLinkTable(links) {
     if (!links || !links.length) return '<p class="empty-state">No links yet.</p>';
-    const rows = links.map(link => {
-        const favicon = getFavicon(link.url);
-        const fallback = getFallback(link.name, link.url);
+    const rows = links.map((link, idx) => {
+        const primaryUrl = link.url || (link.urls && link.urls[0]);
+        const favicon = getFavicon(primaryUrl);
+        const fallback = getFallback(link.name, primaryUrl);
         const tags = (link.tags || []).map(t => `<span class="tag-pill">${t}</span>`).join('');
-        return `<tr>
+        const hasUrls = link.urls && link.urls.length > 1;
+        const mirrorId = `mir-${link.name.replace(/[^a-z0-9]/gi, '_')}_${idx}`;
+
+        const badge = hasUrls
+            ? `<button class="url-count-badge" onclick="toggleMirrorRow('${mirrorId}',this)" aria-expanded="false" aria-label="Show alternate URLs">[+${link.urls.length - 1}]</button>`
+            : '';
+
+        const mirrorRow = hasUrls ? (() => {
+            const urlItems = link.urls.slice(1).map(u => {
+                const domain = new URL(u).hostname.replace(/^www\./, '');
+                return `<a href="${u}" target="_blank" rel="noopener noreferrer" class="mirror-url-btn">${domain}</a>`;
+            }).join('');
+            return `<tr class="mirror-expand-row" id="${mirrorId}">
+                <td colspan="3" class="mirror-expand-cell">
+                    <div class="mirror-expand-inner">
+                        <span class="mirror-expand-label">mirrors</span>
+                        <div class="mirror-expand-links">${urlItems}</div>
+                    </div>
+                </td>
+            </tr>`;
+        })() : '';
+
+        return `<tr class="link-row${hasUrls ? ' has-mirrors' : ''}">
             <td class="col-icon">
                 <img class="site-favicon" src="${favicon}" alt="" loading="lazy"
                     onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';">
                 <span class="site-favicon-fallback" style="display:none">${fallback}</span>
             </td>
             <td class="col-name">
-                <a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.name}</a>
+                <span class="col-name-inner">
+                    <a href="${primaryUrl}" target="_blank" rel="noopener noreferrer">${link.name}</a>
+                    ${badge}
+                </span>
             </td>
             <td class="col-desc">${link.description || ''} ${tags}</td>
-        </tr>`;
+        </tr>${mirrorRow}`;
     }).join('');
     return `<table class="link-table">
         <thead><tr>
@@ -529,6 +570,15 @@ function renderLinkTable(links) {
         </tr></thead>
         <tbody>${rows}</tbody>
     </table>`;
+}
+
+/* ── Toggle mirror expand row ── */
+function toggleMirrorRow(id, btn) {
+    const row = document.getElementById(id);
+    if (!row) return;
+    const open = row.classList.toggle('mirror-row-open');
+    btn.classList.toggle('url-count-badge--open', open);
+    btn.setAttribute('aria-expanded', open);
 }
 
 /* ── Section collapse toggle ── */
