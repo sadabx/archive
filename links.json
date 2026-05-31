@@ -127,6 +127,18 @@
         "description": "Pre-installed cracked PC games requiring no installation process, provided via direct download."
       },
       {
+        "name": "ToxicGame",
+        "url": "https://toxicgame.net/",
+        "tags": ["cracked", "software", "games", "mac"],
+        "description": "has mac games and cracked software, pc games, ps2/ps3 games, and more."
+      },
+      {
+        "name": "AnkerGames",
+        "url": "https://ankergames.net/",
+        "tags": ["mac", "games", "cracked"],
+        "description": "only mac games"
+      },
+      {
         "name": "GameDrive",
         "url": "https://gamedrive.org/",
         "tags": ["games", "catalog", "software"],
@@ -173,25 +185,25 @@
           {
             "name": "Animetsu",
             "url": "https://animetsu.live/",
-            "tags": ["anime", "streaming", "community"],
+            "tags": ["anime", "streaming"],
             "description": "Platform featuring a modern interface, reliable episode availability, and active community comments."
           },
           {
             "name": "Anikoto",
             "url": "https://anikototv.to/",
-            "tags": ["anime", "catalog", "episodes"],
+            "tags": ["anime"],
             "description": "Library hosting scraped high-quality anime content with an extensive historical episode catalog."
           },
           {
             "name": "Re:anime",
             "url": "https://reanime.to/",
-            "tags": ["anime", "search", "catalog"],
+            "tags": ["anime"],
             "description": "Database featuring advanced episode cataloging, search filters, and community-driven features."
           },
           {
             "name": "AnimePahe",
             "url": "https://animepahe.pw/",
-            "tags": ["anime", "compressed", "episodes"],
+            "tags": ["anime", "compressed"],
             "description": "Lightweight streaming source offering highly compressed episodes and rapid latest releases."
           }
         ]
@@ -208,25 +220,49 @@
               "https://streamseast.cc",
               "https://streamseast.top/"
             ],
-            "tags": ["live-sports", "f1", "streaming"],
+            "tags": ["live-sports"],
             "description": "Modern website with live sports coverage for multiple sports, stream chat."
           },
           {
             "name": "BuffStreams",
             "url": "https://buffstreams.plus",
-            "tags": ["live-sports", "f1", "streaming"]
+            "tags": ["live-sports"]
           },
           {
-            "name": "F1 Live",
-            "url": "https://f1live.dpdns.org/stream",
-            "tags": ["live-sports", "f1", "streaming"],
-            "description": "Live streaming of Formula 1 races and events."
+            "name": "Streamed",
+            "url": "https://streamed.pk/",
+            "tags": ["live-sports"],
+            "description": "Live sports streaming platform covering a wide range of sports and events globally."
+          },
+          {
+            "name": "Sportsurge",
+            "url": "https://sportsurge.ws/",
+            "tags": ["live-sports"],
+            "description": ""
           },
           {
             "name": "VipBox",
             "url": "https://www.vipbox.sc/",
-            "tags": ["live-sports", "streaming", "f1"],
-            "description": "live sports streaming platform covering a wide range of sports and events globally."
+            "tags": ["live-sports"],
+            "description": ""
+          },
+          {
+            "name": "PPV",
+            "url": "https://ppv.to/",
+            "tags": ["football", "live-sports"],
+            "description": ""
+          },
+          {
+            "name": "F1 Live",
+            "url": "https://f1live.dpdns.org/stream",
+            "tags": ["f1"],
+            "description": ""
+          },
+          {
+            "name": "PitSport",
+            "url": "https://pitsport.xyz/",
+            "tags": ["motosports", "f1"],
+            "description": ""
           }
         ]
       }

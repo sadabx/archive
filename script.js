@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'nav-resources': () => setView('all', null, null),
         'footer-resources': () => { setView('all', null, null); window.scrollTo({ top: 0, behavior: 'smooth' }); },
         'nav-guides': () => { if (state.posts.length) { setView('guide', 'guide-0', null); } },
-        'footer-guides': () => { if (state.posts.length) { setView('guide', 'guide-0', null); } window.scrollTo({ top: 0, behavior: 'smooth' }); },
+        'footer-guides': () => { if (state.posts.length) { setView('guide', 'guide-0', null); window.scrollTo({ top: 0, behavior: 'smooth' }); } },
     };
 
     Object.keys(navActions).forEach(id => {
@@ -44,13 +44,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Hamburger toggle
+    // Hamburger — controls BOTH top nav dropdown AND the TOC drawer (mobile only)
     const navToggle = document.getElementById('nav-toggle');
     const mainNav = document.getElementById('main-nav');
+    const leftSidebar = document.querySelector('.left-sidebar');
+    const backdrop = document.getElementById('drawer-backdrop');
+
     navToggle.addEventListener('click', () => {
-        const open = mainNav.classList.toggle('nav-open');
-        navToggle.setAttribute('aria-expanded', open);
+        const isMobile = window.innerWidth <= 640;
+        if (isMobile) {
+            const isOpen = leftSidebar.classList.contains('drawer-open');
+            if (isOpen) {
+                closeDrawer();
+            } else {
+                openDrawer();
+            }
+        } else {
+            // Tablet (no drawer): just toggle the nav
+            const open = mainNav.classList.toggle('nav-open');
+            navToggle.setAttribute('aria-expanded', open);
+        }
     });
+
+    // Close drawer on backdrop click
+    backdrop.addEventListener('click', closeDrawer);
 
     // Mobile search: tap the icon to expand the search box
     const headerSearch = document.querySelector('.header-search');
@@ -125,8 +142,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 
+/* ── Drawer helpers (mobile only) ── */
+function openDrawer() {
+    const leftSidebar = document.querySelector('.left-sidebar');
+    const backdrop = document.getElementById('drawer-backdrop');
+    const navToggle = document.getElementById('nav-toggle');
+
+    leftSidebar.classList.add('drawer-open');
+    // Show backdrop with a tiny delay so the transition fires
+    backdrop.style.display = 'block';
+    requestAnimationFrame(() => backdrop.classList.add('visible'));
+    navToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeDrawer() {
+    const leftSidebar = document.querySelector('.left-sidebar');
+    const backdrop = document.getElementById('drawer-backdrop');
+    const navToggle = document.getElementById('nav-toggle');
+
+    leftSidebar.classList.remove('drawer-open');
+    backdrop.classList.remove('visible');
+    setTimeout(() => { backdrop.style.display = ''; }, 260);
+    navToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+}
+
 /* ── Close mobile nav helper ── */
 function closeNav() {
+    if (window.innerWidth <= 640) {
+        closeDrawer();
+        return;
+    }
     const nav = document.getElementById('main-nav');
     const toggle = document.getElementById('nav-toggle');
     nav.classList.remove('nav-open');
@@ -190,7 +237,10 @@ function renderSearchResults(query, results) {
         const primaryUrl = link.url || (link.urls && link.urls[0]);
         const favicon = getFavicon(primaryUrl);
         const fallback = getFallback(link.name, primaryUrl);
-        const tags = (link.tags || []).map(t => `<span class="tag-pill">${t}</span>`).join('');
+        const escapedLinkName = escapeHtml(link.name);
+        const escapedDesc = escapeHtml(link.description || '');
+        const escapedCat = escapeHtml(cat.category);
+        const tags = (link.tags || []).map(t => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('');
         const hasUrls = link.urls && link.urls.length > 1;
         const mirrorId = `search_mir_${link.name.replace(/[^a-z0-9]/gi, '_')}_${idx}`;
         const badge = hasUrls
@@ -199,7 +249,7 @@ function renderSearchResults(query, results) {
         const mirrorRow = hasUrls ? (() => {
             const urlItems = link.urls.slice(1).map(u => {
                 const domain = new URL(u).hostname.replace(/^www\./, '');
-                return `<a href="${u}" target="_blank" rel="noopener noreferrer" class="mirror-url-btn">${domain}</a>`;
+                return `<a href="${u}" target="_blank" rel="noopener noreferrer" class="mirror-url-btn">${escapeHtml(domain)}</a>`;
             }).join('');
             return `<tr class="mirror-expand-row" id="${mirrorId}">
                 <td colspan="3" class="mirror-expand-cell">
@@ -218,12 +268,12 @@ function renderSearchResults(query, results) {
             </td>
             <td class="col-name">
                 <span class="col-name-inner">
-                    <a href="${primaryUrl}" target="_blank" rel="noopener noreferrer">${link.name}</a>
+                    <a href="${primaryUrl}" target="_blank" rel="noopener noreferrer">${escapedLinkName}</a>
                     ${badge}
                 </span>
-                <div style="font-size:0.72rem;color:var(--text-dim);margin-top:2px;">${cat.icon} ${cat.category}</div>
+                <div style="font-size:0.72rem;color:var(--text-dim);margin-top:2px;">${cat.icon} ${escapedCat}</div>
             </td>
-            <td class="col-desc">${link.description || ''} ${tags}</td>
+            <td class="col-desc">${escapedDesc} ${tags}</td>
         </tr>${mirrorRow}`;
     }).join('');
 
@@ -316,6 +366,8 @@ function renderTOC() {
             else if (action === 'category') setView('category', btn.dataset.id, null);
             else if (action === 'subcategory') setView('subcategory', btn.dataset.id, btn.dataset.subid);
             else if (action === 'guide') setView('guide', `guide-${btn.dataset.idx}`, null);
+            // Close drawer on mobile after selection
+            if (window.innerWidth <= 640) closeDrawer();
         });
     });
 }
@@ -448,29 +500,33 @@ function renderAllPage() {
 
 /* ── Single category page ── */
 function renderCategoryPage(cat) {
+    const escapedCat = escapeHtml(cat.category.toLowerCase());
     const bread = `<div class="breadcrumb">
         <button onclick="setView('all',null,null)" style="background:none;border:none;color:var(--link);cursor:pointer;font-size:0.8rem;padding:0;">home</button>
         <span class="breadcrumb-sep">/</span>
-        <span class="breadcrumb-current">${cat.category.toLowerCase()}</span>
+        <span class="breadcrumb-current">${escapedCat}</span>
     </div>`;
     return bread + renderCategorySection(cat, 1, false);
 }
 
 /* ── Single subcategory page ── */
 function renderSubcategoryPage(cat, sub) {
+    const escapedCatName = escapeHtml(cat.category.toLowerCase());
+    const escapedSubLabel = escapeHtml(sub.label.toLowerCase());
+    const escapedSubName = escapeHtml(sub.label);
     const bread = `<div class="breadcrumb">
         <button onclick="setView('all',null,null)" style="background:none;border:none;color:var(--link);cursor:pointer;font-size:0.8rem;padding:0;">home</button>
         <span class="breadcrumb-sep">/</span>
-        <button onclick="setView('category','${cat.id}',null)" style="background:none;border:none;color:var(--link);cursor:pointer;font-size:0.8rem;padding:0;">${cat.category.toLowerCase()}</button>
+        <button onclick="setView('category','${cat.id}',null)" style="background:none;border:none;color:var(--link);cursor:pointer;font-size:0.8rem;padding:0;">${escapedCatName}</button>
         <span class="breadcrumb-sep">/</span>
-        <span class="breadcrumb-current">${sub.label.toLowerCase()}</span>
+        <span class="breadcrumb-current">${escapedSubLabel}</span>
     </div>`;
 
     return `${bread}
     <div class="wiki-section">
         <div class="wiki-section-header">
             <span class="wiki-section-number">1</span>
-            <h2 class="wiki-section-title">${sub.icon} ${sub.label}</h2>
+            <h2 class="wiki-section-title">${sub.icon} ${escapedSubName}</h2>
         </div>
         <div class="wiki-section-body">
             ${renderLinkTable(sub.links)}
@@ -488,11 +544,12 @@ function renderCategorySection(cat, num, collapsible) {
     if (cat.subcategories) {
         let subNum = 1;
         cat.subcategories.forEach(sub => {
+            const escapedSubLabel = escapeHtml(sub.label);
             bodyHtml += `
             <div class="wiki-subsection">
                 <div class="wiki-subsection-header">
                     <span class="wiki-subsection-number">${num}.${subNum++}</span>
-                    <h3 class="wiki-subsection-title">${sub.icon} ${sub.label}</h3>
+                    <h3 class="wiki-subsection-title">${sub.icon} ${escapedSubLabel}</h3>
                 </div>
                 ${renderLinkTable(sub.links)}
             </div>`;
@@ -501,13 +558,15 @@ function renderCategorySection(cat, num, collapsible) {
         bodyHtml = renderLinkTable(cat.links);
     }
 
-    const desc = cat.description ? `<p class="wiki-section-desc">${cat.description}</p>` : '';
+    const escapedDesc = escapeHtml(cat.description || '');
+    const desc = cat.description ? `<p class="wiki-section-desc">${escapedDesc}</p>` : '';
+    const escapedCategory = escapeHtml(cat.category);
 
     return `
     <div class="wiki-section">
         <div class="wiki-section-header" ${collapsible ? `data-header="section-${cat.id}"` : ''}>
             <span class="wiki-section-number">${num}</span>
-            <h2 class="wiki-section-title">${cat.icon} ${cat.category}</h2>
+            <h2 class="wiki-section-title">${cat.icon} ${escapedCategory}</h2>
             ${toggleBtn}
         </div>
         <div class="wiki-section-body" id="section-${cat.id}">
@@ -524,7 +583,9 @@ function renderLinkTable(links) {
         const primaryUrl = link.url || (link.urls && link.urls[0]);
         const favicon = getFavicon(primaryUrl);
         const fallback = getFallback(link.name, primaryUrl);
-        const tags = (link.tags || []).map(t => `<span class="tag-pill">${t}</span>`).join('');
+        const escapedLinkName = escapeHtml(link.name);
+        const escapedDesc = escapeHtml(link.description || '');
+        const tags = (link.tags || []).map(t => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('');
         const hasUrls = link.urls && link.urls.length > 1;
         const mirrorId = `mir-${link.name.replace(/[^a-z0-9]/gi, '_')}_${idx}`;
 
@@ -535,7 +596,7 @@ function renderLinkTable(links) {
         const mirrorRow = hasUrls ? (() => {
             const urlItems = link.urls.slice(1).map(u => {
                 const domain = new URL(u).hostname.replace(/^www\./, '');
-                return `<a href="${u}" target="_blank" rel="noopener noreferrer" class="mirror-url-btn">${domain}</a>`;
+                return `<a href="${u}" target="_blank" rel="noopener noreferrer" class="mirror-url-btn">${escapeHtml(domain)}</a>`;
             }).join('');
             return `<tr class="mirror-expand-row" id="${mirrorId}">
                 <td colspan="3" class="mirror-expand-cell">
@@ -555,11 +616,11 @@ function renderLinkTable(links) {
             </td>
             <td class="col-name">
                 <span class="col-name-inner">
-                    <a href="${primaryUrl}" target="_blank" rel="noopener noreferrer">${link.name}</a>
+                    <a href="${primaryUrl}" target="_blank" rel="noopener noreferrer">${escapedLinkName}</a>
                     ${badge}
                 </span>
             </td>
-            <td class="col-desc">${link.description || ''} ${tags}</td>
+            <td class="col-desc">${escapedDesc} ${tags}</td>
         </tr>${mirrorRow}`;
     }).join('');
     return `<table class="link-table">
