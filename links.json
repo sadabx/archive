@@ -263,6 +263,12 @@
             "url": "https://pitsport.xyz/",
             "tags": ["motosports", "f1"],
             "description": ""
+          },
+          {
+            "name": "Overtake Fans",
+            "url": "https://overtakefans.com/",
+            "tags": ["f1", "race-archive"],
+            "description": ""
           }
         ]
       }
