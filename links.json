@@ -77,106 +77,11 @@
     ]
   },
   {
-    "id": "software",
-    "category": "Software",
-    "icon": "",
-    "description": "Repositories for desktop applications, mobile tools, and modded APKs.",
-    "links": [
-      {
-        "name": "GetIntoPC",
-        "url": "https://getintopc.com/",
-        "tags": ["software", "windows", "downloads"],
-        "description": "Extensive catalog providing direct download links and tutorials for premium Windows software."
-      },
-      {
-        "name": "Modyolo",
-        "url": "https://modyolo.com/",
-        "tags": ["modded-app", "apk", "mobile"],
-        "description": "Directory for downloading safely modified, premium, and unlocked Android applications."
-      }
-    ]
-  },
-  {
-    "id": "games",
-    "category": "Games",
-    "icon": "",
-    "description": "Game repacks, cracked releases, and multiplayer patches for PC.",
-    "links": [
-      {
-        "name": "FitGirl Repacks",
-        "url": "https://fitgirl-repacks.site/",
-        "tags": ["games", "repacks", "lossless"],
-        "description": "Highly compressed lossless PC game repacks optimized for users with limited bandwidth."
-      },
-      {
-        "name": "DODI Repacks",
-        "url": "https://dodi-repacks.site/",
-        "tags": ["games", "repacks", "mirrors"],
-        "description": "Fast-installing PC game repacks with frequent updates and multiple direct download mirrors."
-      },
-      {
-        "name": "Online-Fix",
-        "url": "https://online-fix.me/",
-        "tags": ["games", "multiplayer", "fixes"],
-        "description": "Patches and cracked executables enabling multiplayer and co-op functionality for pirated PC games."
-      },
-      {
-        "name": "Steamrip",
-        "url": "https://steamrip.com/",
-        "tags": ["games", "steam", "cracked"],
-        "description": "Pre-installed cracked PC games requiring no installation process, provided via direct download."
-      },
-      {
-        "name": "ToxicGame",
-        "url": "https://toxicgame.net/",
-        "tags": ["cracked", "software", "games", "mac"],
-        "description": "has mac games and cracked software, pc games, ps2/ps3 games, and more."
-      },
-      {
-        "name": "AnkerGames",
-        "url": "https://ankergames.net/",
-        "tags": ["mac", "games", "cracked"],
-        "description": "only mac games"
-      },
-      {
-        "name": "GameDrive",
-        "url": "https://gamedrive.org/",
-        "tags": ["games", "catalog", "software"],
-        "description": "Searchable database providing direct download links for PC games, DLCs, and essential updates."
-      }
-    ]
-  },
-  {
     "id": "streaming",
     "category": "Streaming",
     "icon": "",
     "description": "Platforms for watching movies, television shows, anime, and live sports.",
     "subcategories": [
-      {
-        "id": "movies",
-        "label": "Movies",
-        "icon": "",
-        "links": [
-          {
-            "name": "Cineby",
-            "url": "https://cineby.sc/",
-            "tags": ["movies", "tv", "streaming"],
-            "description": "Media streaming site with a modern UI, daily top 10 charts, and trending content curation."
-          },
-          {
-            "name": "StreameX",
-            "url": "https://streamex.sh/",
-            "tags": ["movies", "tv", "streaming"],
-            "description": "Fast streaming source for high-quality films and TV shows across multiple genres."
-          },
-          {
-            "name": "1shows",
-            "url": "https://www.1shows.org",
-            "tags": ["movies", "tv", "sports"],
-            "description": "Quick-access streaming platform hosting movies, television series, and live events."
-          }
-        ]
-      },
       {
         "id": "anime",
         "label": "Anime",
@@ -205,6 +110,31 @@
             "url": "https://animepahe.pw/",
             "tags": ["anime", "compressed"],
             "description": "Lightweight streaming source offering highly compressed episodes and rapid latest releases."
+          }
+        ]
+      },
+      {
+        "id": "movies",
+        "label": "Movies",
+        "icon": "",
+        "links": [
+          {
+            "name": "Cineby",
+            "url": "https://cineby.sc/",
+            "tags": ["movies", "tv", "streaming"],
+            "description": "Media streaming site with a modern UI, daily top 10 charts, and trending content curation."
+          },
+          {
+            "name": "StreameX",
+            "url": "https://streamex.sh/",
+            "tags": ["movies", "tv", "streaming"],
+            "description": "Fast streaming source for high-quality films and TV shows across multiple genres."
+          },
+          {
+            "name": "1shows",
+            "url": "https://www.1shows.org",
+            "tags": ["movies", "tv", "sports"],
+            "description": "Quick-access streaming platform hosting movies, television series, and live events."
           }
         ]
       },
@@ -246,7 +176,12 @@
             "tags": ["live-sports"],
             "description": ""
           },
-          { "name": "StreamFree", "url": "https://streamfree.app/", "tags": ["live-sports"], "description": "" },
+          {
+            "name": "StreamFree",
+            "url": "https://streamfree.app/",
+            "tags": ["live-sports"],
+            "description": ""
+          },
           {
             "name": "PPV",
             "url": "https://ppv.to/",
@@ -274,12 +209,118 @@
         ]
       },
       {
-      "id": "iptv",
-      "label": "IPTV",
-      "icon": "",
-      "links": [
-        { "name": "T9 TV", "url": "https://iptv.trionine.xyz/", "tags": ["iptv","bd"], "description": "" },
-        { "name": "Famelack", "url": "https://famelack.com/", "tags": ["iptv"], "description": "" }
+        "id": "iptv",
+        "label": "IPTV",
+        "icon": "",
+        "links": [
+          {
+            "name": "T9 TV",
+            "url": "https://iptv.trionine.xyz/",
+            "tags": ["iptv", "bd"],
+            "description": ""
+          },
+          {
+            "name": "Famelack",
+            "url": "https://famelack.com/",
+            "tags": ["iptv"],
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "software",
+    "category": "Software",
+    "icon": "",
+    "description": "Repositories for desktop applications, mobile tools, and modded APKs.",
+    "links": [
+      {
+        "name": "GetIntoPC",
+        "url": "https://getintopc.com/",
+        "tags": ["software", "windows", "downloads"],
+        "description": "Extensive catalog providing direct download links and tutorials for premium Windows software."
+      },
+      {
+        "name": "Modyolo",
+        "url": "https://modyolo.com/",
+        "tags": ["modded-app", "apk", "mobile"],
+        "description": "Directory for downloading safely modified, premium, and unlocked Android applications."
+      }
+    ]
+  },
+  {
+    "id": "games",
+    "category": "Games",
+    "icon": "",
+    "description": "Game repacks, cracked releases, and multiplayer patches for PC.",
+    "subcategories": [
+      {
+        "id": "cracked",
+        "label": "Cracked",
+        "icon": "",
+        "links": [
+          {
+            "name": "FitGirl Repacks",
+            "url": "https://fitgirl-repacks.site/",
+            "tags": ["games", "repack", "windows"],
+            "description": "Highly compressed lossless PC game repacks optimized for users with limited bandwidth."
+          },
+          {
+            "name": "DODI Repacks",
+            "url": "https://dodi-repacks.site/",
+            "tags": ["games", "repack", "windows"],
+            "description": "Fast-installing PC game repacks with frequent updates and multiple direct download mirrors."
+          },
+          {
+            "name": "Online-Fix",
+            "url": "https://online-fix.me/",
+            "tags": ["games", "multiplayer", "windows"],
+            "description": "Patches and cracked executables enabling multiplayer and co-op functionality for pirated PC games."
+          },
+          {
+            "name": "Steamrip",
+            "url": "https://steamrip.com/",
+            "tags": ["games", "steam", "cracked"],
+            "description": "Pre-installed cracked PC games requiring no installation process, provided via direct download."
+          },
+          {
+            "name": "ToxicGame",
+            "url": "https://toxicgame.net/",
+            "tags": ["cracked", "software", "games", "mac"],
+            "description": "has mac games and cracked software, pc games, ps2/ps3 games, and more."
+          },
+          {
+            "name": "AnkerGames",
+            "url": "https://ankergames.net/",
+            "tags": ["mac", "games", "cracked"],
+            "description": "only mac games"
+          },
+          {
+            "name": "GameDrive",
+            "url": "https://gamedrive.org/",
+            "tags": ["games", "cracked", "software"],
+            "description": "Searchable database providing direct download links for PC games, DLCs, and essential updates."
+          }
+        ]
+      },
+      {
+        "id": "tools",
+        "label": "Tools",
+        "icon": "",
+        "links": [
+          {
+            "name": "SteamTools",
+            "url": "https://steamtools.net",
+            "tags": ["windows", "steam"],
+            "description": "download and play for free non-denuvo games from steam on windows"
+          },
+          {
+            "name": "SLSsteam with Accela",
+            "url": "https://github.com/ciscosweater/enter-the-wired/",
+            "tags": ["linux", "steam"],
+            "description": "similar to steamtools for linux but its open-sourced and trusted by communities"
+          }
         ]
       }
     ]

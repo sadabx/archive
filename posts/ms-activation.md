@@ -26,5 +26,5 @@ Search for **PowerShell** in your Start Menu, right-click it, and select **Run a
 Copy and paste the following command into the terminal and press **Enter**:
 
 ```powershell
-irm [https://massgrave.dev/get](https://massgrave.dev/get) | iex
+irm https://massgrave.dev/get | iex
 ```
