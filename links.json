@@ -120,9 +120,19 @@
         "links": [
           {
             "name": "Cineby",
-            "url": "https://cineby.sc/",
+            "urls": [
+              "https://cineby.at/",
+              "https://www.cineplay.to/",
+              "https://www.fmovies.gd/"
+            ],
             "tags": ["movies", "tv", "streaming"],
             "description": "Media streaming site with a modern UI, daily top 10 charts, and trending content curation."
+          },
+          {
+            "name": "RiveStream",
+            "url": "https://rivestream.app/",
+            "tags": ["movies", "streaming", "tv", "iptv", "live-sports"],
+            "description": ""
           },
           {
             "name": "StreameX",
@@ -187,6 +197,12 @@
             "url": "https://ppv.to/",
             "tags": ["football", "live-sports"],
             "description": ""
+          },
+          {
+            "name": "Yacine TV",
+            "url": "https://yacineweb.org/",
+            "tags": ["football", "live-sports"],
+            "description": "football in arabic"
           },
           {
             "name": "F1 Live",

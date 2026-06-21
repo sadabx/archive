@@ -5,7 +5,11 @@
     "date": "2026-05-08",
     "cat": "software",
     "catLabel": "Software Tools",
-    "tags": ["idm", "download", "patch"],
+    "tags": [
+      "idm",
+      "download",
+      "patch"
+    ],
     "desc": "Methods to activate IDM for free, covering both lifetime activation and trial reset procedures."
   },
   {
@@ -14,7 +18,11 @@
     "date": "2026-05-10",
     "cat": "windows",
     "catLabel": "Windows Systems",
-    "tags": ["activation", "script", "powershell"],
+    "tags": [
+      "activation",
+      "script",
+      "powershell"
+    ],
     "desc": "Educational documentation for managing activation states for Windows and Office via PowerShell."
   },
   {
@@ -23,7 +31,11 @@
     "date": "2026-05-12",
     "cat": "windows",
     "catLabel": "Windows Systems",
-    "tags": ["windows", "lockscreen", "recovery"],
+    "tags": [
+      "windows",
+      "lockscreen",
+      "recovery"
+    ],
     "desc": "Reset a forgotten Local Administrator password on Windows 10 or 11 using the WinRE utility swap without losing data."
   }
 ]
