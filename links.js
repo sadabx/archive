@@ -1,0 +1,486 @@
+window.linksData = [
+  {
+    id: "reading",
+    category: "Reading",
+    icon: "",
+    description: "Digital libraries for books, academic papers, manga, and translated novels.",
+    subcategories: [
+      {
+        id: "ebooks",
+        label: "Ebooks",
+        icon: "",
+        links: [
+          {
+            name: "ZLibrary",
+            url: "https://1lib.sk/",
+            tags: ["ebooks", "library", "research"],
+            description: "Massive shadow library offering millions of ebooks, academic papers, and articles searchable by ISBN."
+          },
+          {
+            name: "Anna's Archive",
+            url: "https://annas-archive.gl/",
+            tags: ["ebooks", "library", "academic"],
+            description: "Comprehensive open-source search engine for shadow libraries, books, and academic papers with torrent seeding."
+          },
+          {
+            name: "Ocean of PDF",
+            url: "https://oceanofpdf.com/",
+            tags: ["ebooks", "pdf", "archive"],
+            description: "Extensive library focusing on free PDF and EPUB downloads across various fiction and non-fiction genres."
+          }
+        ]
+      },
+      {
+        id: "manga",
+        label: "Manga",
+        icon: "",
+        links: [
+          {
+            name: "Comix",
+            url: "https://comix.to/",
+            tags: ["manga", "webtoon", "reader"],
+            description: "Modern reader with 100,000+ titles, user lists, tracking imports, and a freshly rewritten database."
+          },
+          {
+            name: "WeebCentral",
+            url: "https://weebcentral.com/",
+            tags: ["manga", "updates", "reader"],
+            description: "Fast-loading manga and webtoon platform known for an extensive collection and rapid chapter updates."
+          },
+          {
+            name: "Mangafire",
+            url: "https://mangafire.to/",
+            tags: ["manga", "ad-free", "sync"],
+            description: "Free manga reader featuring zero pop-up ads, reading modes, and cross-device synchronization."
+          }
+        ]
+      },
+      {
+        id: "novels",
+        label: "Novels",
+        icon: "",
+        links: [
+          {
+            name: "Novelfire",
+            url: "https://novelfire.net/",
+            tags: ["light-novels", "web-novels", "translations"],
+            description: "Platform for translated light novels and web novels across all genres with fast updates."
+          },
+          {
+            name: "LightNovelWorld",
+            url: "https://lightnovelworld.org/",
+            tags: ["light-novels", "rankings", "chapters"],
+            description: "Web novel host with over 7,000 series, featuring user ratings and a comprehensive ranking system."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "streaming",
+    category: "Streaming",
+    icon: "",
+    description: "Platforms for watching movies, television shows, anime, and live sports.",
+    subcategories: [
+      {
+        id: "anime",
+        label: "Anime",
+        icon: "",
+        links: [
+          {
+            name: "Animetsu",
+            url: "https://animetsu.live/",
+            tags: ["anime", "streaming"],
+            description: "Platform featuring a modern interface, reliable episode availability, and active community comments."
+          },
+          {
+            name: "Anikoto",
+            url: "https://anikototv.to/",
+            tags: ["anime"],
+            description: "Library hosting scraped high-quality anime content with an extensive historical episode catalog."
+          },
+          {
+            name: "Re:anime",
+            url: "https://reanime.to/",
+            tags: ["anime"],
+            description: "Database featuring advanced episode cataloging, search filters, and community-driven features."
+          },
+          {
+            name: "AnimePahe",
+            url: "https://animepahe.pw/",
+            tags: ["anime", "compressed"],
+            description: "Lightweight streaming source offering highly compressed episodes and rapid latest releases."
+          }
+        ]
+      },
+      {
+        id: "movies",
+        label: "Movies",
+        icon: "",
+        links: [
+          {
+            name: "Cineby",
+            urls: [
+              "https://cineby.at/",
+              "https://www.cineplay.to/",
+              "https://www.fmovies.gd/"
+            ],
+            tags: ["movies", "tv", "streaming"],
+            description: "Media streaming site with a modern UI, daily top 10 charts, and trending content curation."
+          },
+          {
+            name: "RiveStream",
+            url: "https://rivestream.app/",
+            tags: ["movies", "streaming", "tv", "iptv", "live-sports"],
+            description: ""
+          },
+          {
+            name: "StreameX",
+            url: "https://streamex.sh/",
+            tags: ["movies", "tv", "streaming"],
+            description: "Fast streaming source for high-quality films and TV shows across multiple genres."
+          },
+          {
+            name: "1shows",
+            url: "https://www.1shows.org",
+            tags: ["movies", "tv", "sports"],
+            description: "Quick-access streaming platform hosting movies, television series, and live events."
+          }
+        ]
+      },
+      {
+        id: "sports",
+        label: "Sports",
+        icon: "",
+        links: [
+          {
+            name: "Streamed",
+            urls: ["https://streamed.pk/", "https://streamed.st/"],
+            tags: ["live-sports"],
+            description: "Live sports streaming platform covering a wide range of sports and events globally."
+          },
+          {
+            name: "NTV",
+            url: "https://ntv.cx/",
+            tags: ["live-sports"],
+            description: ""
+          },
+          /*{
+            name: "StreamEast",
+            urls: [
+              "https://istreameast.pro",
+              "https://streamseast.cc",
+              "https://streamseast.top/"
+            ],
+            tags: ["live-sports"],
+            description: "Modern website with live sports coverage for multiple sports, stream chat."
+          },*/
+          {
+            name: "BuffStreams",
+            url: "https://buffstreams.plus",
+            tags: ["live-sports"]
+          },
+          {
+            name: "Sportsurge",
+            url: "https://sportsurge.ws/",
+            tags: ["live-sports"],
+            description: ""
+          },
+          {
+            name: "VipBox",
+            url: "https://www.vipbox.sc/",
+            tags: ["live-sports"],
+            description: ""
+          },
+          {
+            name: "StreamFree",
+            url: "https://streamfree.app/",
+            tags: ["live-sports"],
+            description: ""
+          },
+          {
+            name: "PPV",
+            url: "https://ppv.to/",
+            tags: ["football", "live-sports"],
+            description: ""
+          },
+          {
+            name: "Yacine TV",
+            url: "https://yacineweb.org/",
+            tags: ["football", "live-sports"],
+            description: "football in arabic"
+          },
+          {
+            name: "F1 Live",
+            url: "https://f1live.dpdns.org/",
+            tags: ["f1"],
+            description: ""
+          },
+          {
+            name: "PitSport",
+            url: "https://pitsport.xyz/",
+            tags: ["motosports", "f1"],
+            description: ""
+          },
+          {
+            name: "Overtake Fans",
+            url: "https://overtakefans.com/",
+            tags: ["f1", "race-archive"],
+            description: ""
+          }
+        ]
+      },
+      {
+        id: "iptv",
+        label: "IPTV",
+        icon: "",
+        links: [
+          {
+            name: "TNTV",
+            url: "https://iptv.trionine.xyz/",
+            tags: ["iptv", "bd"],
+            description: ""
+          },
+          {
+            name: "Famelack",
+            url: "https://famelack.com/",
+            tags: ["iptv"],
+            description: ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "software",
+    category: "Software",
+    icon: "",
+    description: "Repositories for desktop applications, mobile tools, and modded APKs.",
+    links: [
+      {
+        name: "GetIntoPC",
+        url: "https://getintopc.com/",
+        tags: ["software", "windows", "downloads"],
+        description: "Extensive catalog providing direct download links and tutorials for premium Windows software."
+      },
+      {
+        name: "Modyolo",
+        url: "https://modyolo.com/",
+        tags: ["modded-app", "apk", "mobile"],
+        description: "Directory for downloading safely modified, premium, and unlocked Android applications."
+      }
+    ]
+  },
+  {
+    id: "games",
+    category: "Games",
+    icon: "",
+    description: "Game repacks, cracked releases, and multiplayer patches for PC.",
+    subcategories: [
+      {
+        id: "cracked",
+        label: "Cracked",
+        icon: "",
+        links: [
+          {
+            name: "FitGirl Repacks",
+            url: "https://fitgirl-repacks.site/",
+            tags: ["games", "repack", "windows"],
+            description: "Highly compressed lossless PC game repacks optimized for users with limited bandwidth."
+          },
+          {
+            name: "DODI Repacks",
+            url: "https://dodi-repacks.site/",
+            tags: ["games", "repack", "windows"],
+            description: "Fast-installing PC game repacks with frequent updates and multiple direct download mirrors."
+          },
+          {
+            name: "Online-Fix",
+            url: "https://online-fix.me/",
+            tags: ["games", "multiplayer", "windows"],
+            description: "Patches and cracked executables enabling multiplayer and co-op functionality for pirated PC games."
+          },
+          {
+            name: "Steamrip",
+            url: "https://steamrip.com/",
+            tags: ["games", "steam", "cracked"],
+            description: "Pre-installed cracked PC games requiring no installation process, provided via direct download."
+          },
+          {
+            name: "ToxicGame",
+            url: "https://toxicgame.net/",
+            tags: ["cracked", "software", "games", "mac"],
+            description: "has mac games and cracked software, pc games, ps2/ps3 games, and more."
+          },
+          {
+            name: "AnkerGames",
+            url: "https://ankergames.net/",
+            tags: ["mac", "games", "cracked"],
+            description: "only mac games"
+          },
+          {
+            name: "GameDrive",
+            url: "https://gamedrive.org/",
+            tags: ["games", "cracked", "software"],
+            description: "Searchable database providing direct download links for PC games, DLCs, and essential updates."
+          }
+        ]
+      },
+      {
+        id: "tools",
+        label: "Tools",
+        icon: "",
+        links: [
+          {
+            name: "SteamTools",
+            url: "https://steamtools.net",
+            tags: ["windows", "steam"],
+            description: "download and play for free non-denuvo games from steam on windows"
+          },
+          {
+            name: "SLSsteam with Accela",
+            url: "https://github.com/ciscosweater/enter-the-wired/",
+            tags: ["linux", "steam"],
+            description: "similar to steamtools for linux but its open-sourced and trusted by communities"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "domains",
+    category: "Domains",
+    icon: "",
+    description: "Registrars and services for acquiring free or budget-friendly web domains.",
+    subcategories: [
+      {
+        id: "offers",
+        label: "Offers",
+        icon: "",
+        links: [
+          {
+            name: "DomainOffer",
+            url: "https://domainoffer.net/",
+            tags: ["domains", "offers", "cheap"],
+            description: "Aggregator tracking the latest discounts and promotional pricing across various domain registrars."
+          },
+          {
+            name: "WordPress",
+            url: "https://wordpress.com/start/domain-for-gravatar/domain-only?search=yes&new=",
+            tags: ["domains", "wordpress", "free"],
+            description: "Get a free custom domain through WordPress Gravatar collaboration (card required)."
+          }
+        ]
+      },
+      {
+        id: "subdomains",
+        label: "Subdomains",
+        icon: "",
+        links: [
+          {
+            name: "Ready BD",
+            url: "https://ready.bd/",
+            tags: ["domains", "subdomains"],
+            description: "Free subdomain for Bangladeshi personal websites. (Extensions: .pro.bd, .ami.bd, .iam.bd, .bro.bd, .apu.bd, .mvp.bd, .nav.bd, .পাতা.বাংলা)"
+          },
+          {
+            name: "FreeDNS",
+            url: "http://freedns.afraid.org",
+            tags: ["dns", "dynamic-dns", "subdomains"],
+            description: "Dynamic DNS provider offering thousands of free subdomains for personal hosting and IP updates."
+          },
+          {
+            name: "No-IP",
+            url: "https://noip.net",
+            tags: ["dns", "dynamic-dns", "subdomains"],
+            description: "Dynamic DNS service offering free subdomains and IP tracking for home servers and remote access."
+          },
+          {
+            name: "Gname",
+            url: "https://www.gname.com/tld-eu-cc.html",
+            tags: ["domains", "subdomains"],
+            description: "Get 3 full-discount .eu.cc registration vouchers for free."
+          },
+          {
+            name: "Is-a-dev",
+            url: "https://www.is-a.dev/",
+            tags: ["subdomains", "developer", "github"],
+            description: "is-a.dev is a free subdomain for developers, authenticated via GitHub."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "communities",
+    category: "Communities",
+    icon: "",
+    description: "Discussion forums and chat servers focused on piracy, tech, and file sharing.",
+    subcategories: [
+      {
+        id: "reddit",
+        label: "Reddit",
+        icon: "",
+        links: [
+          {
+            name: "r/Piracy",
+            url: "https://www.reddit.com/r/Piracy/",
+            tags: ["general", "piracy", "discussions"],
+            description: "Central hub on Reddit for general discussions, guides, and news related to digital piracy."
+          },
+          {
+            name: "r/AnimePiracy",
+            url: "https://www.reddit.com/r/AnimePiracy/",
+            tags: ["anime", "streaming", "sources"],
+            description: "Subreddit dedicated to finding, sharing, and discussing methods to pirate and stream anime."
+          }
+        ]
+      },
+      {
+        id: "discord",
+        label: "Discord",
+        icon: "",
+        links: [
+          {
+            name: "Anti Denuvo Sanctuary",
+            url: "https://discord.gg/anti-denuvo-sanctuary",
+            tags: ["games", "activation"],
+            description: "Community server focused on tracking Denuvo DRM removal and game activation status."
+          },
+          {
+            name: "Pub's Lounge",
+            url: "https://discord.gg/pubslounge",
+            tags: ["games", "activation"],
+            description: "Discord community dedicated to offline game activations and sharing Denuvo-protected accounts."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "directories",
+    category: "Directories",
+    icon: "",
+    description: "Curated lists and indexes cataloging useful links across the web.",
+    links: [
+      {
+        name: "FMHY",
+        url: "https://fmhy.net/",
+        tags: ["piracy", "index", "sources"],
+        description: "FreeMediaHeckYeah is the largest comprehensive curated directory of safe piracy and streaming links."
+      },
+      {
+        name: "EverythingMoe",
+        url: "https://everythingmoe.com/",
+        tags: ["anime", "index", "catalog"],
+        description: "Curated index specifically tracking the uptime and quality of anime streaming platforms."
+      },
+      {
+        name: "BestFreeStreaming",
+        url: "https://www.bestfreestreaming.org/",
+        tags: ["movies", "tv", "index"],
+        description: "Curated index linking to currently working, ad-free streaming websites for films and shows."
+      }
+    ]
+  }
+];

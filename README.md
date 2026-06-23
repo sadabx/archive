@@ -13,7 +13,7 @@ Curated resource wiki - ( Arch Wiki-inspired )
 ├── index.html          # Shell: header, sidebar, content area
 ├── styles.css          # Theme and component styles
 ├── script.js           # Data loading, routing, search, Markdown rendering
-├── links.json          # Resource categories and links
+├── links.js            # Resource categories and links
 └── posts/
     ├── index.json      # Guide manifest (title, date, tags, file path)
     └── *.md            # Individual guide files
@@ -21,46 +21,46 @@ Curated resource wiki - ( Arch Wiki-inspired )
 
 ## Adding a Resource
 
-Edit `links.json`. Flat category:
+Edit `links.js`. Flat category:
 
-```json
+```javascript
 {
-  "id": "",
-  "category": "",
-  "icon": "",
-  "description": "",
-  "links": [
-    { "name": "", "url": "", "tags": [""], "description": "" },
-    { "name": "", "url": "", "tags": [""], "description": "" }
+  id: "",
+  category: "",
+  icon: "",
+  description: "",
+  links: [
+    { name: "", url: "", tags: [""], description: "" },
+    { name: "", urls: ["", ""], tags: [""], description: "" }
   ]
 }
 ```
 
 Category with sub-categories:
 
-```json
+```javascript
 {
-  "id": "",
-  "category": "",
-  "icon": "",
-  "description": "",
-  "subcategories": [
+  id: "",
+  category: "",
+  icon: "",
+  description: "",
+  subcategories: [
     {
-      "id": "",
-      "label": "",
-      "icon": "",
-      "links": [
-        { "name": "", "url": "", "tags": [""], "description": "" },
-        { "name": "", "url": "", "tags": [""], "description": "" }
+      id: "",
+      label: "",
+      icon: "",
+      links: [
+        { name: "", url: "", tags: [""], description: "" },
+        { name: "", url: "", tags: [""], description: "" }
       ]
     },
     {
-      "id": "",
-      "label": "",
-      "icon": "",
-      "links": [
-        { "name": "", "url": "", "tags": [""], "description": "" },
-        { "name": "", "url": "", "tags": [""], "description": "" }
+      id: "",
+      label: "",
+      icon: "",
+      links: [
+        { name: "", url: "", tags: [""], description: "" },
+        { name: "", url: "", tags: [""], description: "" }
       ]
     }
   ]

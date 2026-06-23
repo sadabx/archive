@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     Promise.all([
-        fetch('links.json').then(r => r.json()),
+        Promise.resolve(window.linksData),
         fetch('posts/index.json').then(r => r.json()),
     ])
         .then(([links, posts]) => {
@@ -659,7 +659,7 @@ function attachSectionToggles(container) {
 function getFavicon(url) {
     try {
         const host = new URL(url).hostname.replace(/^www\./, '');
-        return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(host)}&sz=32`;
+        return `https://unavatar.io/${encodeURIComponent(host)}?fallback=false`;
     } catch { return ''; }
 }
 
