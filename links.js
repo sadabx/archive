@@ -213,7 +213,7 @@ window.linksData = [
           },
           {
             name: "BuffStreams",
-            urls: ["https://buffstreams.plus", "https://ibuffstreams.app/"],
+            urls: ["https://ibuffstreams.app/", "https://buffstreams.plus"],
             tags: ["live-sports"],
           },
           {
