@@ -176,6 +176,34 @@ window.linksData = [
             tags: ["live-sports"],
             description:
               "Live sports streaming platform covering a wide range of sports and events globally.",
+          }, {
+            name: "GetFoot",
+            url: "https://getfoot.live/",
+            tags: ["live-sports"],
+            description: "",
+          },
+          {
+            name: "1ball",
+            url: "https://1ball.pk/",
+            tags: ["live-sports"],
+            description: "",
+          },
+          {
+            name: "Goal Relay",
+            url: "https://goalrelay.com/",
+            tags: ["live-sports"],
+            description: "",
+          },
+          {
+            name: "StreamEast",
+            urls: [
+              "https://streamseast.is/",
+              "https://istreameast.cx/",
+              "https://streamseast.cx/",
+              "https://streameastas.cx/",
+            ],
+            tags: ["live-sports"],
+            description: "Modern website with live sports coverage for multiple sports, stream chat."
           },
           {
             name: "NTV",
@@ -183,19 +211,9 @@ window.linksData = [
             tags: ["live-sports"],
             description: "",
           },
-          /*{
-            name: "StreamEast",
-            urls: [
-              "https://istreameast.pro",
-              "https://streamseast.cc",
-              "https://streamseast.top/"
-            ],
-            tags: ["live-sports"],
-            description: "Modern website with live sports coverage for multiple sports, stream chat."
-          },*/
           {
             name: "BuffStreams",
-            url: "https://buffstreams.plus",
+            urls: ["https://buffstreams.plus", "https://ibuffstreams.app/"],
             tags: ["live-sports"],
           },
           {
@@ -204,28 +222,28 @@ window.linksData = [
             tags: ["live-sports"],
             description: "",
           },
-          /*{
-            name: "VipBox",
-            url: "https://www.vipbox.sc/",
-            tags: ["live-sports"],
-            description: ""
-          },
           {
-            name: "",
-            url: "",
+            name: "Get Stream",
+            url: "https://getstream.live",
             tags: ["live-sports"],
-            description: ""
+            description: "",
           },
           {
             name: "Yacine TV",
             url: "https://yacineweb.org/",
             tags: ["football", "live-sports"],
-            description: "football in arabic"
-          },*/
+            description: "football in arabic",
+          },
           {
             name: "PPV",
             url: "https://ppv.to/",
             tags: ["football", "live-sports"],
+            description: "",
+          },
+          {
+            name: "beIN F1",
+            url: "https://beinf1.tiiny.site/",
+            tags: ["f1"],
             description: "",
           },
           {
