@@ -90,4 +90,4 @@ Edit `:root` CSS variables in `styles.css` to adjust colors, fonts, and layout w
 
 ## License
 
-[MIT](LICENSE.md) © [trionine](https://trionine.xyz)
+[MIT](LICENSE.md) © [trionine](https://trionine.com)
