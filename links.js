@@ -552,6 +552,13 @@ window.linksData = [
         description:
           "Curated index linking to currently working, ad-free streaming websites for films and shows.",
       },
+      {
+        name: "The Pirate Bay",
+        url: "https://thepiratebay.org/",
+        tags: ["movies", "tv", "index"],
+        description:
+          "The Pirate Bay is a comprehensive torrent directory for movies, TV shows, games, and software. It offers a wide selection of magnet links and torrent files for users to download or stream content.",
+      },
     ],
   },
 ];
