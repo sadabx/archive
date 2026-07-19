@@ -69,7 +69,7 @@ window.linksData = [
         links: [
           {
             name: "Novelfire",
-            url: "https://novelfire.net/",
+            urls: ["https://novelfire.net/", "https://novelphoenix.com/"],
             tags: ["light-novels", "web-novels", "translations"],
             description:
               "Platform for translated light novels and web novels across all genres with fast updates.",
@@ -98,18 +98,25 @@ window.linksData = [
         icon: "",
         links: [
           {
-            name: "Animetsu",
-            url: "https://animetsu.live/",
-            tags: ["anime", "streaming"],
-            description:
-              "Platform featuring a modern interface, reliable episode availability, and active community comments.",
-          },
-          {
             name: "Anikoto",
             url: "https://anikototv.to/",
             tags: ["anime"],
             description:
               "Library hosting scraped high-quality anime content with an extensive historical episode catalog.",
+          },
+          {
+            name: "AnimePahe",
+            url: "https://animepahe.pw/",
+            tags: ["anime", "compressed"],
+            description:
+              "Lightweight streaming source offering highly compressed episodes and rapid latest releases.",
+          },
+          {
+            name: "Anichi",
+            url: "https://anichi.to/",
+            tags: ["anime", "streaming"],
+            description:
+              "Platform featuring a modern interface, reliable episode availability, and active community comments.",
           },
           {
             name: "Re:anime",
@@ -119,11 +126,11 @@ window.linksData = [
               "Database featuring advanced episode cataloging, search filters, and community-driven features.",
           },
           {
-            name: "AnimePahe",
-            url: "https://animepahe.pw/",
-            tags: ["anime", "compressed"],
+            name: "Animetsu",
+            url: "https://animetsu.live/",
+            tags: ["anime", "streaming"],
             description:
-              "Lightweight streaming source offering highly compressed episodes and rapid latest releases.",
+              "Platform featuring a modern interface, reliable episode availability, and active community comments.",
           },
         ],
       },
@@ -171,12 +178,23 @@ window.linksData = [
         icon: "",
         links: [
           {
+            name: "Sportzfy",
+            url: ["https://sportzfyplay.com/"],
+            tags: ["live-sports"],
+            description: "",
+          },
+          {
             name: "Streamed",
-            urls: ["https://streamed.pk/", "https://streamed.st/"],
+            urls: [
+              "https://streamed.pk/",
+              "https://streamed.st/",
+              "https://streamed24.com/",
+            ],
             tags: ["live-sports"],
             description:
               "Live sports streaming platform covering a wide range of sports and events globally.",
-          }, {
+          },
+          {
             name: "GetFoot",
             url: "https://getfoot.live/",
             tags: ["live-sports"],
@@ -203,7 +221,8 @@ window.linksData = [
               "https://streameastas.cx/",
             ],
             tags: ["live-sports"],
-            description: "Modern website with live sports coverage for multiple sports, stream chat."
+            description:
+              "Modern website with live sports coverage for multiple sports, stream chat.",
           },
           {
             name: "NTV",
