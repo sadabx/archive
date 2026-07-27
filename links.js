@@ -403,6 +403,12 @@ window.linksData = [
         icon: "",
         links: [
           {
+            name: "TOST",
+            url: "https:/manifesthub.trionine.com/TOST/",
+            tags: ["windows", "steam"],
+            description: "Open-source SteamTool works out of the box",
+          },
+          {
             name: "SteamTools",
             url: "https://steamtools.net",
             tags: ["windows", "steam"],
