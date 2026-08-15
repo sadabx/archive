@@ -272,6 +272,24 @@ window.linksData = [
             description: "",
           },
           {
+            name: "WeStreamF1",
+            url: " https://westreamf1.st/",
+            tags: ["f1"],
+            description: "",
+          },
+          {
+            name: "F1Net",
+            url: "https://f1net.vercel.app/home",
+            tags: ["f1"],
+            description: "",
+          },
+          {
+            name: "Rerace",
+            url: "https://rerace.net/",
+            tags: ["f1"],
+            description: "",
+          },
+          {
             name: "PitSport",
             url: "https://pitsport.xyz/",
             tags: ["motosports", "f1"],
