@@ -119,6 +119,12 @@ window.linksData = [
               "Platform featuring a modern interface, reliable episode availability, and active community comments.",
           },
           {
+            name: "Mkissa",
+            url: "https://mkissa.to/",
+            tags: ["anime"],
+            description: "",
+          },
+          {
             name: "Re:anime",
             url: "https://reanime.to/",
             tags: ["anime"],
@@ -139,6 +145,12 @@ window.linksData = [
         label: "Movies",
         icon: "",
         links: [
+          {
+            name: "Goated",
+            url: "https://goated.cx/",
+            tags: ["movies", "tv", "streaming"],
+            description: "",
+          },
           {
             name: "Cineby",
             urls: [
