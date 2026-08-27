@@ -146,21 +146,22 @@ window.linksData = [
         icon: "",
         links: [
           {
-            name: "Goated",
-            url: "https://goated.cx/",
+            name: "Cinejoy",
+            url: "https://cinejoy.to/",
             tags: ["movies", "tv", "streaming"],
             description: "",
           },
           {
-            name: "Cineby",
-            urls: [
-              "https://cineby.at/",
-              "https://www.cineplay.to/",
-              "https://www.fmovies.gd/",
-            ],
+            name: "Fboxtv",
+            url: "https://fboxtv.bz/",
             tags: ["movies", "tv", "streaming"],
-            description:
-              "Media streaming site with a modern UI, daily top 10 charts, and trending content curation.",
+            description: "",
+          },
+          {
+            name: "Bingebang",
+            url: "https://bingebang.tv/",
+            tags: ["movies", "tv", "streaming"],
+            description: "",
           },
           {
             name: "RiveStream",
@@ -181,6 +182,17 @@ window.linksData = [
             tags: ["movies", "tv", "sports"],
             description:
               "Quick-access streaming platform hosting movies, television series, and live events.",
+          },
+          {
+            name: "Cineby",
+            urls: [
+              "https://cineby.at/",
+              "https://www.cineplay.to/",
+              "https://www.fmovies.gd/",
+            ],
+            tags: ["movies", "tv", "streaming"],
+            description:
+              "Media streaming site with a modern UI, daily top 10 charts, and trending content curation.",
           },
         ],
       },
