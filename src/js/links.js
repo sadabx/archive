@@ -13,7 +13,7 @@ window.linksData = [
         links: [
           {
             name: "ZLibrary",
-            url: "https://1lib.sk/",
+            url: "https://z-lib.sk/",
             tags: ["ebooks", "library", "research"],
             description:
               "Massive shadow library offering millions of ebooks, academic papers, and articles searchable by ISBN.",
@@ -131,13 +131,6 @@ window.linksData = [
             description:
               "Database featuring advanced episode cataloging, search filters, and community-driven features.",
           },
-          {
-            name: "Animetsu",
-            url: "https://animetsu.live/",
-            tags: ["anime", "streaming"],
-            description:
-              "Platform featuring a modern interface, reliable episode availability, and active community comments.",
-          },
         ],
       },
       {
@@ -146,10 +139,24 @@ window.linksData = [
         icon: "",
         links: [
           {
+            name: "Cinevid",
+            url: "https://cinevid.st/",
+            tags: ["movies", "tv", "iptv", "live-sports"],
+            description:
+              "All-in-one streaming platform featuring movies, TV series, 1,000+ live TV channels, and sports events.",
+          },
+          {
             name: "Cinejoy",
-            url: "https://cinejoy.to/",
+            url: "https://cinejoy.pk/",
             tags: ["movies", "tv", "streaming"],
             description: "",
+          },
+          {
+            name: "Movy",
+            url: "https://www.movy.sx/",
+            tags: ["movies", "tv", "streaming"],
+            description:
+              "Stream the latest movies and TV shows online in HD with no signup required.",
           },
           {
             name: "Fboxtv",
@@ -158,20 +165,8 @@ window.linksData = [
             description: "",
           },
           {
-            name: "Bingebang",
-            url: "https://bingebang.tv/",
-            tags: ["movies", "tv", "streaming"],
-            description: "",
-          },
-          {
-            name: "RiveStream",
-            url: "https://rivestream.app/",
-            tags: ["movies", "streaming", "tv", "iptv", "live-sports"],
-            description: "",
-          },
-          {
             name: "StreameX",
-            url: "https://streamex.sh/",
+            url: "https://www.streamex.hn/",
             tags: ["movies", "tv", "streaming"],
             description:
               "Fast streaming source for high-quality films and TV shows across multiple genres.",
@@ -183,17 +178,6 @@ window.linksData = [
             description:
               "Quick-access streaming platform hosting movies, television series, and live events.",
           },
-          {
-            name: "Cineby",
-            urls: [
-              "https://cineby.at/",
-              "https://www.cineplay.to/",
-              "https://www.fmovies.gd/",
-            ],
-            tags: ["movies", "tv", "streaming"],
-            description:
-              "Media streaming site with a modern UI, daily top 10 charts, and trending content curation.",
-          },
         ],
       },
       {
@@ -203,26 +187,33 @@ window.linksData = [
         links: [
           {
             name: "Sportzfy",
-            url: ["https://sportzfyplay.com/"],
+            url: "https://sportzfyplay.com/",
             tags: ["live-sports"],
             description: "",
+          },
+          {
+            name: "TimStreams",
+            url: "https://timst.top/",
+            tags: ["live-sports"],
+            description:
+              "Live sports streaming platform covering global events and matches.",
+          },
+          {
+            name: "BINTV",
+            url: "https://www.bintv.cc/",
+            tags: ["live-sports"],
+            description:
+              "Live sports streaming platform offering multiple channels and live match feeds.",
           },
           {
             name: "Streamed",
             urls: [
               "https://streamed.pk/",
               "https://streamed.st/",
-              "https://streamed24.com/",
             ],
             tags: ["live-sports"],
             description:
               "Live sports streaming platform covering a wide range of sports and events globally.",
-          },
-          {
-            name: "GetFoot",
-            url: "https://getfoot.live/",
-            tags: ["live-sports"],
-            description: "",
           },
           {
             name: "1ball",
@@ -235,18 +226,6 @@ window.linksData = [
             url: "https://goalrelay.com/",
             tags: ["live-sports"],
             description: "",
-          },
-          {
-            name: "StreamEast",
-            urls: [
-              "https://streamseast.is/",
-              "https://istreameast.cx/",
-              "https://streamseast.cx/",
-              "https://streameastas.cx/",
-            ],
-            tags: ["live-sports"],
-            description:
-              "Modern website with live sports coverage for multiple sports, stream chat.",
           },
           {
             name: "NTV",
@@ -266,14 +245,8 @@ window.linksData = [
             description: "",
           },
           {
-            name: "Get Stream",
-            url: "https://getstream.live",
-            tags: ["live-sports"],
-            description: "",
-          },
-          {
             name: "Yacine TV",
-            url: "https://yacineweb.org/",
+            url: "https://yacinee-tv.net/",
             tags: ["football", "live-sports"],
             description: "football in arabic",
           },
@@ -291,13 +264,13 @@ window.linksData = [
           },
           {
             name: "F1 Live",
-            url: "https://f1live.dpdns.org/",
+            url: "https://flive.dpdns.org/",
             tags: ["f1"],
             description: "",
           },
           {
             name: "WeStreamF1",
-            url: " https://westreamf1.st/",
+            url: "https://westreamf1.st/",
             tags: ["f1"],
             description: "",
           },
@@ -315,7 +288,7 @@ window.linksData = [
           },
           {
             name: "PitSport",
-            url: "https://pitsport.xyz/",
+            url: "https://pitsport.st/",
             tags: ["motosports", "f1"],
             description: "",
           },
@@ -446,9 +419,9 @@ window.linksData = [
         links: [
           {
             name: "TOST",
-            url: "https:/manifesthub.trionine.com/TOST/",
+            url: "https://manifesthub.trionine.com/tost/",
             tags: ["windows", "steam"],
-            description: "Open-source SteamTool works out of the box",
+            description: "Open-source SteamTool for playing non-denuvo steam games offline",
           },
           {
             name: "SteamTools",
@@ -510,14 +483,14 @@ window.linksData = [
           },
           {
             name: "FreeDNS",
-            url: "http://freedns.afraid.org",
+            url: "https://freedns.afraid.org",
             tags: ["dns", "dynamic-dns", "subdomains"],
             description:
               "Dynamic DNS provider offering thousands of free subdomains for personal hosting and IP updates.",
           },
           {
             name: "No-IP",
-            url: "https://noip.net",
+            url: "https://www.noip.com/",
             tags: ["dns", "dynamic-dns", "subdomains"],
             description:
               "Dynamic DNS service offering free subdomains and IP tracking for home servers and remote access.",
