@@ -139,13 +139,6 @@ window.linksData = [
         icon: "",
         links: [
           {
-            name: "Cinevid",
-            url: "https://cinevid.st/",
-            tags: ["movies", "tv", "iptv", "live-sports"],
-            description:
-              "All-in-one streaming platform featuring movies, TV series, 1,000+ live TV channels, and sports events.",
-          },
-          {
             name: "Cinejoy",
             url: "https://cinejoy.pk/",
             tags: ["movies", "tv", "streaming"],
@@ -157,12 +150,6 @@ window.linksData = [
             tags: ["movies", "tv", "streaming"],
             description:
               "Stream the latest movies and TV shows online in HD with no signup required.",
-          },
-          {
-            name: "Fboxtv",
-            url: "https://fboxtv.bz/",
-            tags: ["movies", "tv", "streaming"],
-            description: "",
           },
           {
             name: "StreameX",
@@ -178,6 +165,19 @@ window.linksData = [
             description:
               "Quick-access streaming platform hosting movies, television series, and live events.",
           },
+          {
+            name: "Fboxtv",
+            url: "https://fboxtv.bz/",
+            tags: ["movies", "tv", "streaming"],
+            description: "",
+          },
+          {
+            name: "Cinevid",
+            url: "https://cinevid.st/",
+            tags: ["movies", "tv", "iptv", "live-sports"],
+            description:
+              "All-in-one streaming platform featuring movies, TV series, 1,000+ live TV channels, and sports events.",
+          },
         ],
       },
       {
@@ -192,6 +192,15 @@ window.linksData = [
             description: "",
           },
           {
+            name: "Streamed",
+            urls: [
+              "https://streamed.pk/",
+              "https://streamed.st/",
+            ],
+            tags: ["live-sports"],
+            description:
+              "Live sports streaming platform covering a wide range of sports and events globally.",
+          }, {
             name: "TimStreams",
             url: "https://timst.top/",
             tags: ["live-sports"],
@@ -204,16 +213,6 @@ window.linksData = [
             tags: ["live-sports"],
             description:
               "Live sports streaming platform offering multiple channels and live match feeds.",
-          },
-          {
-            name: "Streamed",
-            urls: [
-              "https://streamed.pk/",
-              "https://streamed.st/",
-            ],
-            tags: ["live-sports"],
-            description:
-              "Live sports streaming platform covering a wide range of sports and events globally.",
           },
           {
             name: "1ball",
@@ -229,9 +228,77 @@ window.linksData = [
           },
           {
             name: "NTV",
-            url: "https://ntv.cx/",
+            urls: ["https://ntv.cx/", "https://ntvs.cx/"],
             tags: ["live-sports"],
             description: "",
+          },
+          {
+            name: "StreamEast",
+            urls: [
+              "https://streameast.ga/",
+              "https://streameast.cf/",
+              "https://streameast.ch/",
+              "https://streameast.ec/",
+              "https://streameast.fi/",
+              "https://streameast.fm/",
+              "https://streameast.is/",
+              "https://streameast.ml/",
+              "https://streameast.ms/",
+              "https://streameast.ph/",
+              "https://streameast.ps/",
+              "https://streameast.sg/",
+              "https://streameast.sk/",
+              "https://thestreameast.fun/",
+              "https://thestreameast.ru/",
+              "https://thestreameast.su/",
+            ],
+            tags: ["live-sports"],
+            description:
+              "Popular live sports streaming platform offering coverage across multiple sports and stream chat.",
+          },
+          {
+            name: "PPV",
+            urls: [
+              "https://ppv.st/",
+              "https://ppv.tj/",
+              "https://ppvs.pk/",
+              "https://ppv.rw/",
+              "https://ppv.ms/",
+              "https://ppv.bi/",
+              "https://ppv.ug/",
+            ],
+            tags: ["football", "live-sports"],
+            description: "",
+          },
+          {
+            name: "StreamCorner",
+            url: "https://streamcorner.st/",
+            tags: ["live-sports"],
+            description:
+              "Live sports streaming aggregator for matches and major sporting events.",
+          },
+          {
+            name: "WatchSports",
+            urls: [
+              "https://watchsports.su/",
+              "https://watch-sports.st/",
+              "https://watchsports-live.st/",
+              "https://wtchsprts.st/",
+              "https://livesports.st/",
+            ],
+            tags: ["live-sports"],
+            description:
+              "Free live sports streaming platform with multiple server options for global matches.",
+          },
+          {
+            name: "Strumyk",
+            urls: [
+              "https://strumyk.pk/",
+              "https://strumyk.net/",
+            ],
+            tags: ["football", "live-sports"],
+            description:
+              "Sports streaming service offering live football matches and European sports coverage.",
           },
           {
             name: "BuffStreams",
@@ -249,12 +316,6 @@ window.linksData = [
             url: "https://yacinee-tv.net/",
             tags: ["football", "live-sports"],
             description: "football in arabic",
-          },
-          {
-            name: "PPV",
-            url: "https://ppv.to/",
-            tags: ["football", "live-sports"],
-            description: "",
           },
           {
             name: "beIN F1",
