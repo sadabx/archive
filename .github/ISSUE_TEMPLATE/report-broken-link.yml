@@ -1,0 +1,59 @@
+name: "🚨 Report Broken or Obsolete Link"
+description: "Report a link that is dead, hijacked, domain-expired, or no longer contains the intended content."
+title: "[Broken Link]: "
+labels: ["broken-link"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping keep **π archive** clean and up to date!
+        Please verify that the issue is on the site's end (e.g. not a temporary ISP block or downtime).
+
+  - type: input
+    id: resource_name
+    attributes:
+      label: Resource Name
+      description: Name of the resource being reported.
+    validations:
+      required: true
+
+  - type: input
+    id: resource_url
+    attributes:
+      label: Resource URL
+      description: The exact URL that is broken or obsolete.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: problem_type
+    attributes:
+      label: What is the issue?
+      description: Select why this link should be updated or removed.
+      options:
+        - "Site is dead / 404 / Server down permanently"
+        - "Domain expired or hijacked (spam, ads, casino, or parking page)"
+        - "Content changed / No longer serves its original purpose"
+        - "Behind paywall / No longer free or accessible"
+        - "Malware, phishing, or security warning"
+        - "New domain or working mirror available"
+    validations:
+      required: true
+
+  - type: input
+    id: replacement_url
+    attributes:
+      label: Replacement URL or Mirror (Optional)
+      description: If the project moved to a new domain or mirror, provide the working link here.
+      placeholder: "https://new-domain.com"
+    validations:
+      required: false
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Additional Notes
+      description: Any extra details or context.
+      placeholder: "e.g. Domain expired last month and now redirects to ads."
+    validations:
+      required: false

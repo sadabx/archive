@@ -1,0 +1,53 @@
+backend:
+  name: github
+  repo: sadabx/archive
+  branch: main
+
+# Enable local backend if running decap-server locally
+local_backend: false
+
+collections:
+  - name: "database"
+    label: "Resource Database"
+    files:
+      - name: "links_data"
+        label: "Resource Categories & Links"
+        file: "src/data/links.json"
+        format: "json"
+        fields:
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.category}} ({{fields.id}})"
+            fields:
+              - { label: "Category ID", name: "id", widget: "string" }
+              - { label: "Category Name", name: "category", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - label: "Direct Links (if flat category)"
+                name: "links"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Description", name: "description", widget: "string", required: false }
+                  - { label: "Tags", name: "tags", widget: "list", required: false }
+              - label: "Subcategories (if nested category)"
+                name: "subcategories"
+                widget: "list"
+                required: false
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Subcategory ID", name: "id", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Icon", name: "icon", widget: "string", required: false }
+                  - label: "Links"
+                    name: "links"
+                    widget: "list"
+                    summary: "{{fields.name}} ({{fields.url}})"
+                    fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "URL", name: "url", widget: "string" }
+                      - { label: "Description", name: "description", widget: "string", required: false }
+                      - { label: "Tags", name: "tags", widget: "list", required: false }

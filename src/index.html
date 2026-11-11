@@ -15,7 +15,7 @@
     />
     <meta property="og:type" content="website" />
     <title>archive - Resource Wiki</title>
-    <link rel="stylesheet" href="/src/css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%23FFFFFF'>π</text></svg>"
@@ -44,7 +44,13 @@
         <nav class="main-nav" id="main-nav" aria-label="Main navigation">
           <a href="#" id="nav-home">Home</a>
           <a href="#" id="nav-resources">Resources</a>
-          <a href="#" id="nav-guides">Guides</a>
+          <a
+            href="https://github.com/sadabx/archive/issues/new?template=suggest-resource.yml"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-suggest-btn"
+            >+ Suggest</a
+          >
         </nav>
 
         <div class="header-search" role="search">
@@ -127,7 +133,12 @@
           <p class="footer-col-label">Quick Links</p>
           <a href="#" id="footer-home">Home</a>
           <a href="#" id="footer-resources">Resources</a>
-          <a href="#" id="footer-guides">Guides</a>
+          <a
+            href="https://github.com/sadabx/archive/issues/new?template=suggest-resource.yml"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Suggest Resource ↗</a
+          >
           <a
             href="https://github.com/sadabx/archive"
             target="_blank"
@@ -151,8 +162,6 @@
     <!-- Mobile drawer backdrop -->
     <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
-    <script src="/src/js/links.js"></script>
-    <script src="src/js/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

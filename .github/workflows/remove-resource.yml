@@ -1,0 +1,74 @@
+name: Remove Broken Resource
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  remove-resource:
+    if: github.event.label.name == 'remove-resource'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Remove Resource from Database
+        id: remove
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          node .github/scripts/remove-resource.js
+
+      - name: Create Pull Request
+        if: steps.remove.outputs.status == 'removed'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: remove broken resource ${{ steps.remove.outputs.name }} (#${{ github.event.issue.number }})"
+          branch: "remove-resource-${{ github.event.issue.number }}"
+          title: "Remove Resource: ${{ steps.remove.outputs.name }} (via #${{ github.event.issue.number }})"
+          body: |
+            Closes #${{ github.event.issue.number }}
+
+            Removed broken / obsolete resource: **${{ steps.remove.outputs.name }}** (${{ steps.remove.outputs.url }})
+            Reported in #${{ github.event.issue.number }}.
+          labels: "automated-pr, remove-resource"
+
+      - name: Comment on Issue (Success)
+        if: steps.remove.outputs.status == 'removed'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `🗑️ Resource **${process.env.NAME || 'item'}** has been queued for removal. Pull Request has been opened for merging.`
+            });
+        env:
+          NAME: ${{ steps.remove.outputs.name }}
+
+      - name: Comment on Issue (Not Found)
+        if: steps.remove.outputs.status == 'not_found'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `⚠️ Could not find a matching resource in \`links.json\`. It may have already been removed or the URL didn't match.`
+            });

@@ -1,0 +1,78 @@
+name: "➕ Suggest a Resource"
+description: "Submit a new tool, website, or resource to be added to π archive."
+title: "[Resource]: "
+labels: ["resource-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping curate **π archive**! Please fill out the details below.
+        A maintainer will review your suggestion, and our bot will automatically format and submit it to the repository.
+
+  - type: input
+    id: name
+    attributes:
+      label: Resource Name
+      description: What is the name of the website or tool?
+      placeholder: "e.g. LibGen, Stremio, LibreOffice"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: The official website or primary link (must begin with http:// or https://).
+      placeholder: "https://example.com"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category_selection
+    attributes:
+      label: Category / Section
+      description: Where does this resource belong?
+      options:
+        - "Reading - Ebooks"
+        - "Reading - Manga"
+        - "Reading - Novels"
+        - "Streaming - Anime"
+        - "Streaming - Movies"
+        - "Streaming - Sports"
+        - "Streaming - IPTV"
+        - "Software"
+        - "Games - Cracked"
+        - "Games - Tools"
+        - "Domains"
+        - "Communities - Reddit"
+        - "Communities - Discord"
+        - "Directories"
+        - "New / Other Category"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A concise 1-2 sentence description explaining what makes this resource useful.
+      placeholder: "e.g. Free and open source media center that lets you aggregate torrent and streaming addons."
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated tags (lowercase, no spaces around commas).
+      placeholder: "e.g. streaming, open-source, media"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: "I have verified that this link is active, accessible, and not malicious."
+          required: true

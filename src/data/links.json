@@ -1,0 +1,797 @@
+{
+  "categories": [
+    {
+      "id": "reading",
+      "category": "Reading",
+      "icon": "",
+      "description": "Digital libraries for books, academic papers, manga, and translated novels.",
+      "subcategories": [
+        {
+          "id": "ebooks",
+          "label": "Ebooks",
+          "icon": "",
+          "links": [
+            {
+              "name": "ZLibrary",
+              "url": "https://z-lib.sk/",
+              "tags": [
+                "ebooks",
+                "library",
+                "research"
+              ],
+              "description": "Massive shadow library of ebooks, articles, and textbooks."
+            },
+            {
+              "name": "Anna's Archive",
+              "url": "https://annas-archive.gl/",
+              "tags": [
+                "ebooks",
+                "library",
+                "academic"
+              ],
+              "description": "Search engine for books, papers, and shadow libraries."
+            },
+            {
+              "name": "Ocean of PDF",
+              "url": "https://oceanofpdf.com/",
+              "tags": [
+                "ebooks",
+                "pdf",
+                "archive"
+              ],
+              "description": "Direct PDF and EPUB downloads for books and fiction."
+            }
+          ]
+        },
+        {
+          "id": "manga",
+          "label": "Manga",
+          "icon": "",
+          "links": [
+            {
+              "name": "Comix",
+              "url": "https://comix.to/",
+              "tags": [
+                "manga",
+                "webtoon",
+                "reader"
+              ],
+              "description": "Clean online manga and webtoon reader with bookmarking."
+            },
+            {
+              "name": "WeebCentral",
+              "url": "https://weebcentral.com/",
+              "tags": [
+                "manga",
+                "updates",
+                "reader"
+              ],
+              "description": "Fast-updating manga reader with large chapter archive."
+            },
+            {
+              "name": "Mangafire",
+              "url": "https://mangafire.to/",
+              "tags": [
+                "manga",
+                "ad-free",
+                "sync"
+              ],
+              "description": "Manga and manhwa reader with sync and reading modes."
+            }
+          ]
+        },
+        {
+          "id": "novels",
+          "label": "Novels",
+          "icon": "",
+          "links": [
+            {
+              "name": "Novelfire",
+              "urls": [
+                "https://novelfire.net/",
+                "https://novelphoenix.com/"
+              ],
+              "tags": [
+                "light-novels",
+                "web-novels",
+                "translations"
+              ],
+              "description": "Translated Asian light novels and web novels with fast updates."
+            },
+            {
+              "name": "Chikari",
+              "url": "https://chikari.moe/search?type=novel",
+              "tags": [
+                "light-novels",
+                "web-novels",
+                "translations",
+                "reader"
+              ],
+              "description": "Translated web and light novels with chapter progress tracking."
+            },
+            {
+              "name": "NovelPing",
+              "url": "https://novelping.com/",
+              "tags": [
+                "light-novels",
+                "web-novels",
+                "translations"
+              ],
+              "description": "Free translated light novels and web novels updated daily."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "streaming",
+      "category": "Streaming",
+      "icon": "",
+      "description": "Platforms for watching movies, television shows, anime, and live sports.",
+      "subcategories": [
+        {
+          "id": "anime",
+          "label": "Anime",
+          "icon": "",
+          "links": [
+            {
+              "name": "Anikoto",
+              "url": "https://anikototv.to/",
+              "tags": [
+                "hd",
+                "archive"
+              ],
+              "description": "High-quality anime streaming with an extensive archive."
+            },
+            {
+              "name": "AnimePahe",
+              "url": "https://animepahe.pw/",
+              "tags": [
+                "compressed"
+              ],
+              "description": "Lightweight anime player with compact file sizes."
+            },
+            {
+              "name": "Anichi",
+              "url": "https://anichi.to/",
+              "tags": [
+                "sub",
+                "dub"
+              ],
+              "description": "Fast anime streaming with subbed and dubbed options."
+            },
+            {
+              "name": "Mkissa",
+              "url": "https://mkissa.to/",
+              "tags": [
+                "sub",
+                "dub"
+              ],
+              "description": "Clean anime stream with multiple player servers."
+            },
+            {
+              "name": "Re:anime",
+              "url": "https://reanime.to/",
+              "tags": [
+                "ad-free",
+                "tracking"
+              ],
+              "description": "Ad-free anime streaming with season tracking."
+            },
+            {
+              "name": "Gotaku",
+              "url": "https://gotaku.to/",
+              "tags": [
+                "ad-free",
+                "sub",
+                "dub"
+              ],
+              "description": "Ad-free anime streaming with fast subbed and dubbed episode updates."
+            },
+            {
+              "name": "WeebTube",
+              "url": "https://weebtube.cc/",
+              "tags": [
+                "sub",
+                "dub",
+                "updates"
+              ],
+              "description": "Multi-source platform to stream anime and track recent episodes."
+            }
+          ]
+        },
+        {
+          "id": "movies",
+          "label": "Movies",
+          "icon": "",
+          "links": [
+            {
+              "name": "Cinejoy",
+              "url": "https://cinejoy.pk/",
+              "tags": [
+                "movies",
+                "tv",
+                "hd",
+                "streaming"
+              ],
+              "description": "Free HD movie and TV show streaming."
+            },
+            {
+              "name": "Movy",
+              "url": "https://www.movy.sx/",
+              "tags": [
+                "movies",
+                "tv",
+                "streaming"
+              ],
+              "description": "Fast HD movie streaming with no signup required."
+            },
+            {
+              "name": "StreameX",
+              "url": "https://www.streamex.hn/",
+              "tags": [
+                "movies",
+                "tv",
+                "streaming"
+              ],
+              "description": "High-speed movie and series streaming across genres."
+            },
+            {
+              "name": "1shows",
+              "url": "https://www.1shows.org",
+              "tags": [
+                "movies",
+                "tv",
+                "sports"
+              ],
+              "description": "Quick-access streaming for films, TV series, and events."
+            },
+            {
+              "name": "Fboxtv",
+              "url": "https://fboxtv.bz/",
+              "tags": [
+                "movies",
+                "tv",
+                "streaming",
+                "subtitles"
+              ],
+              "description": "Movie and series streaming with subtitles and HD servers."
+            }
+          ]
+        },
+        {
+          "id": "sports",
+          "label": "Sports",
+          "icon": "",
+          "links": [
+            {
+              "name": "BINTV",
+              "url": "https://www.bintv.cc/",
+              "tags": [
+                "f1",
+                "football"
+              ],
+              "description": "Multi-channel live sports and beIN match streams."
+            },
+            {
+              "name": "1ball",
+              "url": "https://1ball.pk/",
+              "tags": [
+                "football",
+                "scores"
+              ],
+              "description": "Live football and sports streams with daily match fixtures."
+            },
+            {
+              "name": "Goal Relay",
+              "url": "https://goalrelay.com/",
+              "tags": [
+                "football"
+              ],
+              "description": "European football streams, schedules, and highlights."
+            },
+            {
+              "name": "NTV",
+              "urls": [
+                "https://ntv.cx/",
+                "https://ntvs.cx/"
+              ],
+              "tags": [
+                "football",
+                "f1",
+                "nba"
+              ],
+              "description": "Direct low-latency streams for football, F1, and NBA."
+            },
+            {
+              "name": "PPV",
+              "urls": [
+                "https://ppv.st/",
+                "https://ppv.tj/",
+                "https://ppvs.pk/",
+                "https://ppv.rw/",
+                "https://ppv.ms/",
+                "https://ppv.bi/",
+                "https://ppv.ug/"
+              ],
+              "tags": [
+                "ppv",
+                "f1",
+                "ufc",
+                "boxing"
+              ],
+              "description": "Consistent and reliable live streams for PPV, combat sports, and F1."
+            },
+            {
+              "name": "StreamFree",
+              "url": "https://strmfree.pk/",
+              "tags": [
+                "f1",
+                "nba",
+                "nfl",
+                "ufc",
+                "football"
+              ],
+              "description": "Clean live streams for major US sports, UFC, football, and F1."
+            },
+            {
+              "name": "StreamCorner",
+              "url": "https://streamcorner.st/",
+              "tags": [
+                "aggregator"
+              ],
+              "description": "Aggregator for live sporting events and US sports."
+            },
+            {
+              "name": "WatchSports",
+              "urls": [
+                "https://watchsports.su/",
+                "https://watch-sports.st/",
+                "https://watchsports-live.st/",
+                "https://wtchsprts.st/",
+                "https://livesports.st/"
+              ],
+              "tags": [
+                "f1",
+                "football"
+              ],
+              "description": "Multi-server live sports feeds including F1 and football."
+            },
+            {
+              "name": "Strumyk",
+              "urls": [
+                "https://strumyk.pk/",
+                "https://strumyk.net/"
+              ],
+              "tags": [
+                "football"
+              ],
+              "description": "European sports streaming focused on live football."
+            },
+            {
+              "name": "Yacine TV",
+              "url": "https://yacinews.com/",
+              "tags": [
+                "football",
+                "arabic",
+                "bein"
+              ],
+              "description": "Arabic sports broadcasts for European leagues and tournaments."
+            },
+            {
+              "name": "F1 Live",
+              "url": "https://flive.cc.cd/",
+              "tags": [
+                "f1",
+                "motorsports"
+              ],
+              "description": "Formula 1 live feeds with timing and team radio."
+            },
+            {
+              "name": "WeStreamF1",
+              "url": "https://westreamf1.st/",
+              "tags": [
+                "f1",
+                "motorsports"
+              ],
+              "description": "Formula 1, F2, F3, and Porsche Supercup live feeds."
+            },
+            {
+              "name": "Rerace",
+              "url": "https://www.rerace.net/",
+              "tags": [
+                "f1",
+                "replays",
+                "motorsports"
+              ],
+              "description": "Full-race replay archive for F1, MotoGP, and IndyCar."
+            },
+            {
+              "name": "PitSport",
+              "url": "https://pitsport.st/",
+              "tags": [
+                "f1",
+                "motorsports"
+              ],
+              "description": "Motorsport streams for F1, MotoGP, WRC, and NASCAR."
+            },
+            {
+              "name": "Overtake Fans",
+              "url": "https://overtakefans.com/",
+              "tags": [
+                "f1",
+                "replays",
+                "motorsports"
+              ],
+              "description": "F1 race replay archive with full HD season recordings."
+            }
+          ]
+        },
+        {
+          "id": "iptv",
+          "label": "IPTV",
+          "icon": "",
+          "links": [
+            {
+              "name": "TNTV",
+              "url": "https://iptv.trionine.com/",
+              "tags": [
+                "iptv",
+                "bd",
+                "channels"
+              ],
+              "description": "Fast Bangladeshi and international live TV channels."
+            },
+            {
+              "name": "Famelack",
+              "url": "https://famelack.com/",
+              "tags": [
+                "iptv",
+                "international",
+                "channels"
+              ],
+              "description": "Free worldwide live TV, news, and sports channels."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "software",
+      "category": "Software",
+      "icon": "",
+      "description": "Repositories for desktop applications, mobile tools, and modded APKs.",
+      "links": [
+        {
+          "name": "GetIntoPC",
+          "url": "https://getintopc.com/",
+          "tags": [
+            "software",
+            "windows",
+            "downloads"
+          ],
+          "description": "Direct downloads for PC software, tools, and tutorials."
+        },
+        {
+          "name": "Modyolo",
+          "url": "https://modyolo.com/",
+          "tags": [
+            "modded-app",
+            "apk",
+            "mobile"
+          ],
+          "description": "Curated directory of modded and premium Android APKs."
+        }
+      ]
+    },
+    {
+      "id": "games",
+      "category": "Games",
+      "icon": "",
+      "description": "Game repacks, cracked releases, and multiplayer patches for PC.",
+      "subcategories": [
+        {
+          "id": "cracked",
+          "label": "Cracked",
+          "icon": "",
+          "links": [
+            {
+              "name": "FitGirl Repacks",
+              "url": "https://fitgirl-repacks.site/",
+              "tags": [
+                "games",
+                "repack",
+                "windows"
+              ],
+              "description": "Highly compressed, bandwidth-friendly PC game repacks."
+            },
+            {
+              "name": "DODI Repacks",
+              "url": "https://dodi-repacks.site/",
+              "tags": [
+                "games",
+                "repack",
+                "windows"
+              ],
+              "description": "Fast-installing PC game repacks with direct mirrors."
+            },
+            {
+              "name": "Online-Fix",
+              "url": "https://online-fix.me/",
+              "tags": [
+                "games",
+                "multiplayer",
+                "windows"
+              ],
+              "description": "Multiplayer and co-op fixes for cracked PC games."
+            },
+            {
+              "name": "Steamrip",
+              "url": "https://steamrip.com/",
+              "tags": [
+                "games",
+                "steam",
+                "cracked"
+              ],
+              "description": "Pre-installed cracked PC games with direct downloads."
+            },
+            {
+              "name": "ToxicGame",
+              "url": "https://toxicgame.net/",
+              "tags": [
+                "games",
+                "macos",
+                "cracked",
+                "retro"
+              ],
+              "description": "Direct downloads for Mac games, PC titles, and retro ROMs."
+            },
+            {
+              "name": "Steamunlocked",
+              "url": "https://steamunlocked.org/",
+              "tags": [
+                "games",
+                "cracked",
+                "pre-installed",
+                "pc"
+              ],
+              "description": "Pre-installed PC games with all DLCs included."
+            },
+            {
+              "name": "AnkerGames",
+              "url": "https://ankergames.net/",
+              "tags": [
+                "games",
+                "cracked",
+                "macos"
+              ],
+              "description": "Curated game downloads specifically for macOS."
+            },
+            {
+              "name": "GameDrive",
+              "url": "https://gamedrive.org/",
+              "tags": [
+                "games",
+                "cracked",
+                "software"
+              ],
+              "description": "Fast direct download links for PC games and updates."
+            }
+          ]
+        },
+        {
+          "id": "tools",
+          "label": "Tools",
+          "icon": "",
+          "links": [
+            {
+              "name": "TOST",
+              "url": "https://tost.trionine.com/",
+              "tags": [
+                "windows",
+                "steam",
+                "tools",
+                "open-source"
+              ],
+              "description": "Open-source tool to play non-Denuvo Steam games offline."
+            },
+            {
+              "name": "LuaTools",
+              "url": "https://lua.tools/app",
+              "tags": [
+                "windows",
+                "steam",
+                "tools",
+                "games"
+              ],
+              "description": "Windows app for Lua-based Steam game unlockers and fixes."
+            },
+            {
+              "name": "SLSsteam with Accela",
+              "url": "https://github.com/ciscosweater/enter-the-wired/",
+              "tags": [
+                "linux",
+                "steam",
+                "open-source",
+                "games"
+              ],
+              "description": "Open-source Linux tool for DRM-free Steam gaming."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "domains",
+      "category": "Domains",
+      "icon": "",
+      "description": "Registrars and services for acquiring free or budget-friendly web domains and subdomains.",
+      "links": [
+        {
+          "name": "DomainOffer",
+          "url": "https://domainoffer.net/",
+          "tags": [
+            "offers",
+            "cheap"
+          ],
+          "description": "Tracks discounts and promos across domain registrars."
+        },
+        {
+          "name": "Ready BD",
+          "url": "https://ready.bd/",
+          "tags": [
+            "subdomains"
+          ],
+          "description": "Free personal subdomain for Bangladeshi websites."
+        },
+        {
+          "name": "FreeDNS",
+          "url": "https://freedns.afraid.org",
+          "tags": [
+            "dns",
+            "dynamic-dns",
+            "subdomains"
+          ],
+          "description": "Free dynamic DNS and subdomains for self-hosting."
+        },
+        {
+          "name": "No-IP",
+          "url": "https://www.noip.com/",
+          "tags": [
+            "dns",
+            "dynamic-dns",
+            "subdomains"
+          ],
+          "description": "Free dynamic DNS for remote access and home servers."
+        },
+        {
+          "name": "Gname",
+          "url": "https://www.gname.com/tld-eu-cc.html",
+          "tags": [
+            "subdomains"
+          ],
+          "description": "Free .eu.cc domain registration vouchers."
+        },
+        {
+          "name": "Is-a-dev",
+          "url": "https://is-a.dev/",
+          "tags": [
+            "subdomains",
+            "developer",
+            "github",
+            "free"
+          ],
+          "description": "Free .is-a.dev subdomain for developers via GitHub."
+        }
+      ]
+    },
+    {
+      "id": "communities",
+      "category": "Communities",
+      "icon": "",
+      "description": "Discussion forums and chat servers focused on piracy, tech, and file sharing.",
+      "subcategories": [
+        {
+          "id": "reddit",
+          "label": "Reddit",
+          "icon": "",
+          "links": [
+            {
+              "name": "r/Piracy",
+              "url": "https://www.reddit.com/r/Piracy/",
+              "tags": [
+                "general",
+                "piracy",
+                "discussions"
+              ],
+              "description": "Reddit's central piracy discussion hub and megathread."
+            },
+            {
+              "name": "r/AnimePiracy",
+              "url": "https://www.reddit.com/r/AnimePiracy/",
+              "tags": [
+                "anime",
+                "streaming",
+                "sources"
+              ],
+              "description": "Subreddit for anime streaming, indexers, and tools."
+            }
+          ]
+        },
+        {
+          "id": "discord",
+          "label": "Discord",
+          "icon": "",
+          "links": [
+            {
+              "name": "Anti Denuvo Sanctuary",
+              "url": "https://discord.gg/anti-denuvo-sanctuary",
+              "tags": [
+                "games",
+                "activation"
+              ],
+              "description": "Discord tracking Denuvo removals and game bypasses."
+            },
+            {
+              "name": "Pub's Lounge",
+              "url": "https://discord.gg/pubslounge",
+              "tags": [
+                "games",
+                "activation"
+              ],
+              "description": "Discord community for offline game activations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "directories",
+      "category": "Directories",
+      "icon": "",
+      "description": "Curated lists and indexes cataloging useful links across the web.",
+      "links": [
+        {
+          "name": "FMHY",
+          "url": "https://fmhy.net/",
+          "tags": [
+            "piracy",
+            "index",
+            "sources"
+          ],
+          "description": "The most comprehensive safe piracy and tool directory."
+        },
+        {
+          "name": "EverythingMoe",
+          "url": "https://everythingmoe.com/",
+          "tags": [
+            "anime",
+            "index",
+            "catalog"
+          ],
+          "description": "Curated index tracking anime streaming and manga sites."
+        },
+        {
+          "name": "BestFreeStreaming",
+          "url": "https://www.bestfreestreaming.org/",
+          "tags": [
+            "movies",
+            "tv",
+            "index"
+          ],
+          "description": "Index of verified ad-free movie and TV streaming sites."
+        },
+        {
+          "name": "The Pirate Bay",
+          "url": "https://thepiratebay.org/",
+          "tags": [
+            "movies",
+            "tv",
+            "index"
+          ],
+          "description": "Veteran public torrent index for movies, games, and software."
+        }
+      ]
+    }
+  ]
+}
