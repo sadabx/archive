@@ -3,6 +3,9 @@ backend:
   repo: sadabx/archive
   branch: main
 
+media_folder: "src/assets"
+public_folder: "/assets"
+
 # Enable local backend if running decap-server locally
 local_backend: false
 
